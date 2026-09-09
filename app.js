@@ -813,10 +813,10 @@ function initContactForm() {
 
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('mukesh0792@outlook.com').then(() => {
-        showToast('Email address copied to clipboard: mukesh0792@outlook.com');
+      navigator.clipboard.writeText('mukesh.projection@gmail.com').then(() => {
+        showToast('Email address copied to clipboard: mukesh.projection@gmail.com');
       }).catch(() => {
-        showToast('Email: mukesh0792@outlook.com');
+        showToast('Email: mukesh.projection@gmail.com');
       });
     });
   }
@@ -839,7 +839,7 @@ function initContactForm() {
       const subject = document.getElementById('form-subject')?.value || 'Cinema AV Engineering Inquiry';
       const message = document.getElementById('form-message')?.value || '';
 
-      const mailtoUrl = `mailto:mukesh0792@outlook.com?subject=${encodeURIComponent(`[AV Engineering Inquiry] ${subject}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+      const mailtoUrl = `mailto:mukesh.projection@gmail.com?subject=${encodeURIComponent(`[AV Engineering Inquiry] ${subject}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
 
       window.location.href = mailtoUrl;
       showToast('Opening default email client to send message to Mukesh Kumar...');
