@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mukesh Kumar | Senior AV & Digital Cinema Projection Engineer</title>
+  <meta name="description" content="Portfolio & Technical Showcase of Mukesh Kumar - AV Engineer with 14+ years experience in digital cinema projection (Barco, Christie, NEC), laser systems, Q-SYS, Dante, and 80+ screen fleet operations.">
+  <meta name="keywords" content="Cinema Engineer, AV Engineer, Digital Cinema, Barco Series 4, Christie RealLaser, NEC Laser, DCI Compliance, Q-SYS, Dante, PVR INOX, Qube Cinema, Laser Light Upgrade">
+  <meta name="author" content="Mukesh Kumar">
+
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="Mukesh Kumar | Senior AV & Digital Cinema Projection Engineer">
+  <meta property="og:description" content="14+ years experience managing 80+ screens with 99%+ uptime across Barco, Christie & NEC laser cinema platforms.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter, Syne & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cinema: {
+              950: '#07090e',
+              900: '#0d121d',
+              850: '#111827',
+              800: '#1f293d',
+            },
+            laser: {
+              cyan: '#06b6d4',
+              amber: '#f59e0b',
+              blue: '#38bdf8',
+              emerald: '#10b981',
+              red: '#ef4444',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.344.0/umd/lucide.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cinema-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Optical Background Projector Beam Effect -->
+  <div class="projector-beam"></div>
+
+  <!-- Header Navigation -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- Brand & Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-amber-500 p-0.5 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-cinema-950 rounded-[7px] flex items-center justify-center overflow-hidden">
+            <img src="mukesh.png" alt="Profile" class="w-full h-full object-cover object-top opacity-90">
+          </div>
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg tracking-wider text-white flex items-center gap-2">
+            MUKESH KUMAR
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 live-indicator"></span>
+          </span>
+          <p class="text-[10px] text-slate-400 font-mono tracking-wider">AV & DCI CINEMA PROJECTION ENGINEER</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-slate-300">
+        <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#competencies" class="hover:text-cyan-400 transition-colors">Systems</a>
+        <a href="#signal-flow" class="hover:text-cyan-400 transition-colors">Signal Flow</a>
+        <a href="#diagnostic-logs-section" class="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          Logs
+        </a>
+        <a href="#dci-calculator" class="hover:text-cyan-400 transition-colors">DCI Lab</a>
+        <a href="#barco-lens-calculator" class="hover:text-cyan-400 transition-colors">Barco Lab</a>
+        <a href="#audio-visualizer-section" class="hover:text-cyan-400 transition-colors">Acoustics</a>
+        <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="px-3.5 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition-colors flex items-center gap-1.5">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          Contact
+        </a>
+        <button onclick="window.print()" class="px-3.5 py-2 text-xs font-mono font-semibold uppercase tracking-wider bg-gradient-to-r from-cyan-500 to-amber-500 text-slate-950 font-bold rounded-lg hover:opacity-95 shadow-md shadow-cyan-500/20 transition-all flex items-center gap-1.5">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          PDF Resume
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cinema-900/95 border-b border-slate-800 px-6 py-5 backdrop-blur-xl">
+      <div class="flex flex-col gap-3 text-xs font-mono uppercase tracking-wider">
+        <a href="#experience" class="text-slate-200 hover:text-cyan-400 py-1">Experience & Fleet Ops</a>
+        <a href="#competencies" class="text-slate-200 hover:text-cyan-400 py-1">Hardware Ecosystem</a>
+        <a href="#signal-flow" class="text-slate-200 hover:text-cyan-400 py-1">DCI Signal Flow Simulator</a>
+        <a href="#diagnostic-logs-section" class="text-cyan-400 hover:text-cyan-300 py-1 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Diagnostic Logs Terminal (Barco, Dante, Q-SYS)
+        </a>
+        <a href="#dci-calculator" class="text-slate-200 hover:text-cyan-400 py-1">DCI Screen Lumens Lab</a>
+        <a href="#barco-lens-calculator" class="text-slate-200 hover:text-cyan-400 py-1">Barco Cinema Lens Calculator</a>
+        <a href="#audio-visualizer-section" class="text-slate-200 hover:text-cyan-400 py-1">Acoustic Tone Generator</a>
+        <a href="#certifications" class="text-slate-200 hover:text-cyan-400 py-1">Verified OEM Certifications</a>
+        <a href="#contact" class="text-slate-200 hover:text-cyan-400 py-1">Contact & Inquiries</a>
+        <div class="pt-3 border-t border-slate-800 flex gap-3">
+          <a href="#contact" class="w-full text-center py-2 text-xs font-mono uppercase bg-cyan-500 text-slate-950 font-bold rounded-md">
+            Hire Mukesh
+          </a>
+          <button onclick="window.print()" class="w-full text-center py-2 text-xs font-mono uppercase border border-slate-700 text-slate-300 font-bold rounded-md">
+            Print Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-32 pb-20 lg:pt-36 lg:pb-24 overflow-hidden cinema-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Status Header Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 backdrop-blur-md mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 live-indicator"></span>
+        <span class="text-xs font-mono text-slate-300">
+          MANAGER – SOUND & PROJECTION @ PVR INOX LIMITED • 80+ SCREEN FLEET LEAD
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Left Hero Details -->
+        <div class="lg:col-span-8">
+
+          <!-- Photo Profile Add-on -->
+          <div class="mb-8 relative group inline-block">
+            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-amber-500 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-900 p-1 shadow-2xl">
+              <div class="w-full h-full rounded-full overflow-hidden bg-slate-950 relative">
+                <img src="mukesh.png" alt="Mukesh Kumar - AV & Digital Cinema Projection Engineer" class="w-full h-full object-cover z-10 relative object-top">
+                <div class="absolute inset-0 bg-cyan-500/10 mix-blend-color z-20 pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+            Engineering Flawless <br class="hidden sm:block">
+            <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-amber-400 bg-clip-text text-transparent">
+              Digital Cinema & Laser
+            </span> Projections
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8">
+            <strong class="text-white font-semibold">14+ years</strong> of battle-tested engineering across Barco, Christie, and NEC projection platforms, delivering
+            <span class="text-cyan-400 font-semibold font-mono">99%+ uptime</span> across 80+ multiplex screens. Now leveraging deep expertise in Q-SYS DSP, Dante AV-over-IP networking, and acoustics to drive advanced integrations and innovate within the broader <strong class="text-amber-400 font-semibold">Pro AV Engineering</strong> industry.
+          </p>
+
+          <!-- Deployment Attributes -->
+          <div class="flex flex-wrap gap-2.5 mb-8">
+            <span class="px-3 py-1.5 text-xs font-mono rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-2">
+              <i data-lucide="plane-takeoff" class="w-3.5 h-3.5 text-cyan-400"></i>
+              Valid Passport (Global / Domestic)
+            </span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
+              Jaipur, Rajasthan, India
+            </span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-2">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i>
+              30 Days Notice Period
+            </span>
+            <span class="px-3 py-1.5 text-xs font-mono rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i>
+              Barco Series 4 Level 2 Certified
+            </span>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#diagnostic-logs-section" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-950 font-bold text-xs uppercase font-mono hover:shadow-lg hover:shadow-cyan-500/25 transition-all flex items-center gap-2">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+              Launch Diagnostic Logs
+            </a>
+            <a href="#dci-calculator" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-xs uppercase font-mono hover:bg-slate-800 transition-all flex items-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4 text-amber-400"></i>
+              DCI Screen Lumens Lab
+            </a>
+            <a href="#certifications" class="px-6 py-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 font-semibold text-xs uppercase font-mono hover:border-slate-700 transition-all flex items-center gap-2">
+              <i data-lucide="award" class="w-4 h-4 text-cyan-400"></i>
+              OEM Certifications
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Quick Tech Telemetry HUD Card -->
+        <div class="lg:col-span-4">
+          <div class="glass-panel rounded-2xl p-6 border border-slate-800 hud-corner relative">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800/80">
+              <div class="flex items-center gap-2">
+                <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+                <span class="text-xs font-mono uppercase text-slate-300 font-semibold">Master Fleet Telemetry</span>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
+                ONLINE
+              </span>
+            </div>
+
+            <!-- Telemetry Items -->
+            <div class="space-y-3 text-xs font-mono">
+              <div class="flex justify-between items-center p-2.5 rounded bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-400">Multiplex Screens:</span>
+                <span class="text-cyan-300 font-bold">80+ Screens (Active)</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-400">Fleet Availability:</span>
+                <span class="text-emerald-400 font-bold">99.2% Uptime SLA</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-400">OEM Projectors:</span>
+                <span class="text-white">Barco S2/S4, Christie, NEC</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-400">Color Standards:</span>
+                <span class="text-amber-400 font-bold">DCI-P3 14.0 fL / 4.5 fL 3D</span>
+              </div>
+              <div class="flex justify-between items-center p-2.5 rounded bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-400">Audio Backbone:</span>
+                <span class="text-sky-300">Dante / Q-SYS / AES3 / Atmos</span>
+              </div>
+            </div>
+
+            <!-- Mini Pulse Indicator Bar -->
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                Optical Laser Core: Nominal
+              </span>
+              <span class="text-cyan-400">24,500 lm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Stats Counter Grid -->
+      <div id="stats-section" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center">
+          <div class="font-display text-3xl sm:text-4xl font-bold text-cyan-400 mb-1">
+            <span class="stat-number" data-target="14">14</span>+
+          </div>
+          <div class="text-xs font-mono uppercase text-slate-400">Years Experience</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center">
+          <div class="font-display text-3xl sm:text-4xl font-bold text-amber-400 mb-1">
+            <span class="stat-number" data-target="80">80</span>+
+          </div>
+          <div class="text-xs font-mono uppercase text-slate-400">Cinema Screens Managed</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center">
+          <div class="font-display text-3xl sm:text-4xl font-bold text-emerald-400 mb-1">
+            <span class="stat-number" data-target="99">99</span>%
+          </div>
+          <div class="text-xs font-mono uppercase text-slate-400">Uptime Operational SLA</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center">
+          <div class="font-display text-3xl sm:text-4xl font-bold text-sky-400 mb-1">
+            <span class="stat-number" data-target="100">100</span>+
+          </div>
+          <div class="text-xs font-mono uppercase text-slate-400">Laser & DCI Deployments</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Professional Career Track Record Section -->
+  <section id="experience" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Career History</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">14+ Years of Cinema Engineering Leadership</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Proven operational excellence leading multi-city cinema multiplex engineering, sound & projection teams, OEM vendor management, and greenfield installations.</p>
+    </div>
+
+    <div class="space-y-8">
+
+      <!-- Role 1: PVR INOX LIMITED -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-slate-800 relative hud-corner">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20 text-xs font-mono uppercase font-bold mb-2">
+              PVR INOX LIMITED • INDIA'S LARGEST MULTIPLEX CHAIN
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white">Manager – Sound & Projection</h3>
+            <p class="text-slate-400 text-sm font-mono mt-0.5">Fleet Engineering Lead (Rajasthan & Regional Circuits)</p>
+          </div>
+          <div class="text-right flex md:flex-col items-center md:items-end justify-between gap-2">
+            <span class="text-xs font-mono px-3 py-1 rounded bg-slate-900 border border-slate-700 text-slate-200">
+              Nov 2023 – Present
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-indicator"></span> Active Role
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+          <div class="lg:col-span-8 space-y-3 text-sm text-slate-300">
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>80+ Cinema Screens Oversight:</strong> Direct technical authority managing sound, projection, network infrastructure, and preventive maintenance schedules across high-volume multiplexes.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>99%+ Fleet Availability:</strong> Maintained industry-leading uptime through rigorous preventive maintenance (PM) cycles, optical alignment, Scheimpflug adjustment, and laser chiller maintenance.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>Laser Light Upgrade (LLU) Conversions:</strong> Executed Xenon-to-Laser retrofit deployments, significantly decreasing power consumption, eliminating lamp-burst risks, and elevating screen brightness to SMPTE DCI standards.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-1 shrink-0"></i>
+              <span><strong>Acoustic B-Chain Calibration:</strong> Conducted reference 85 dBC pink noise sound tuning, 1/3-octave equalization, subwoofer crossover phase alignment, and Dante/Q-SYS stream health checks.</span>
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2.5 font-mono text-xs">
+            <span class="text-[11px] uppercase tracking-wider text-slate-400 font-bold block mb-2">Operational Tech Stack</span>
+            <div class="flex justify-between text-slate-300"><span>Projectors:</span> <span class="text-white font-semibold">Barco S2/S4, Christie RGB</span></div>
+            <div class="flex justify-between text-slate-300"><span>Processors:</span> <span class="text-cyan-300">Dolby CP950, Q-SYS Core</span></div>
+            <div class="flex justify-between text-slate-300"><span>AoIP Network:</span> <span class="text-sky-400">Audinate Dante / AES67</span></div>
+            <div class="flex justify-between text-slate-300"><span>Security / IMB:</span> <span class="text-purple-300">Barco ICMP-X, Dolby IMS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role 2: QUBE CINEMA TECHNOLOGIES -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-slate-800 relative">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono uppercase font-bold mb-2">
+              QUBE CINEMA TECHNOLOGIES PVT. LTD.
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white">Customer Support Executive / Cinema Systems Engineer</h3>
+            <p class="text-slate-400 text-sm font-mono mt-0.5">Specialized in DCI Systems, Server Integration & Field Installations</p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs font-mono px-3 py-1 rounded bg-slate-900 border border-slate-700 text-slate-200">
+              Aug 2010 – Nov 2023 (13+ Years)
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+          <div class="lg:col-span-8 space-y-3 text-sm text-slate-300">
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mt-1 shrink-0"></i>
+              <span><strong>Over a Decade of Field Service:</strong> Executed end-to-end commissioning, installation, optical calibration, and board-level troubleshooting for 100+ commercial digital cinema auditoriums across India.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mt-1 shrink-0"></i>
+              <span><strong>Multi-OEM Mastery:</strong> Field-certified troubleshooting across Barco (Series 2 DP2K & Series 4 SP4K), Christie (CP2000, CP2220, CP2230, RealLaser), and NEC (NC Series) projectors.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mt-1 shrink-0"></i>
+              <span><strong>Server & Ingest Systems:</strong> Expert deployment of Qube XP, Qube Master, Dolby DSS200/IMS, GDC servers, TMS (Theatre Management Systems), automated playlist generation, and KDM security management.</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mt-1 shrink-0"></i>
+              <span><strong>Training & Site Audits:</strong> Trained over 150+ projectionists and theater technicians in emergency recovery, lamp replacement safety, laser safety protocols, and daily checklist adherence.</span>
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2.5 font-mono text-xs">
+            <span class="text-[11px] uppercase tracking-wider text-slate-400 font-bold block mb-2">OEM Field Exposure</span>
+            <div class="flex justify-between text-slate-300"><span>Barco Series:</span> <span class="text-white font-semibold">DP2K, DP4K, SP4K</span></div>
+            <div class="flex justify-between text-slate-300"><span>Christie Series:</span> <span class="text-white font-semibold">Solaria & RealLaser</span></div>
+            <div class="flex justify-between text-slate-300"><span>NEC Series:</span> <span class="text-white font-semibold">NC1200C / NC1202L</span></div>
+            <div class="flex justify-between text-slate-300"><span>Servers & TMS:</span> <span class="text-amber-300">Qube / Dolby / GDC</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Core Hardware & Systems Competencies -->
+  <section id="competencies" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Technical Domains</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Core Engineering Systems & Protocols</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Specialized multi-disciplinary competencies bridging precision optical physics, cinema colorimetry, digital audio DSP, and enterprise networking.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Domain 1: Laser & 3-Chip DLP Optics -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+          <i data-lucide="sun" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">Laser & DLP Projection Optics</h3>
+        <p class="text-sm text-slate-300 mb-4">Mastery of 3-chip DLP optical paths (0.98" & 1.2" DMDs), Scheimpflug focus plane tilt, optical convergence, and Laser Light Upgrade (LLU) conversions.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-cyan-300">Barco Series 4</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-cyan-300">Christie RealLaser</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-cyan-300">NEC NC1402L</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-cyan-300">Chiller Thermals</span>
+        </div>
+      </div>
+
+      <!-- Domain 2: DCI Compliance & Security -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5">
+          <i data-lucide="shield" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">DCI Compliance & Cryptography</h3>
+        <p class="text-sm text-slate-300 mb-4">Deep expertise in SMPTE 428/429/430 standards, DCI-P3 colorimetry calibration (14 fL 2D / 4.5 fL 3D), IMB/ICMP-X marriage security tokens, and KDM management.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300">FIPS 140-2 Level 3</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300">SMPTE ST 431-1</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300">KDM TLS Chains</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-amber-300">DCI Color Space</span>
+        </div>
+      </div>
+
+      <!-- Domain 3: Audio DSP & Dante AoIP -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-5">
+          <i data-lucide="activity" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">Dante AoIP & Cinema Audio DSP</h3>
+        <p class="text-sm text-slate-300 mb-4">Audinate Dante Level 1 certified audio routing, Q-SYS Core DSP configuration, 16-channel AES3 digital audio, Dolby Atmos alignment, and amplifier impedance monitoring.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-sky-300">Dante Level 1</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-sky-300">Q-SYS Cinema 101</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-sky-300">Dolby CP950</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-sky-300">85 dBC B-Chain</span>
+        </div>
+      </div>
+
+      <!-- Domain 4: Network & AV-over-IP Architecture -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5">
+          <i data-lucide="network" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">Pro AV & AV-over-IP Systems Integration</h3>
+        <p class="text-sm text-slate-300 mb-4">Certified Lightware AV-over-IP & Dante routing, enterprise Cisco VLAN segmentation, IGMPv3 multicast streaming, low-latency video distribution, and commercial AV system design.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-purple-300">Lightware AV-IP</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-purple-300">Dante AoIP / AES67</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-purple-300">IGMPv3 Multicast</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-purple-300">Pro AV Integration</span>
+        </div>
+      </div>
+
+      <!-- Domain 5: Preventive Maintenance & Diagnostics -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+          <i data-lucide="wrench" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">Preventive Maintenance (PM) & SLA</h3>
+        <p class="text-sm text-slate-300 mb-4">Certified Barco Level 2 Diagnostics. Rigorous PM execution for cooling loops, intake filters, DMD engine health, fan tachometers, and zero-downtime emergency failover.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-emerald-300">Barco Level 2</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-emerald-300">Chiller PM</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-emerald-300">Root Cause Analysis</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-emerald-300">SLA Recovery</span>
+        </div>
+      </div>
+
+      <!-- Domain 6: Greenfield Cinema Engineering -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-rose-500/40 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 mb-5">
+          <i data-lucide="layers" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display text-xl font-bold text-white mb-2">Greenfield Installation & Commissioning</h3>
+        <p class="text-sm text-slate-300 mb-4">Complete site commissioning from structural projection port glass placement and throw ratio calculation to electrical single-line diagrams, speaker rigging, and final DCI sign-off.</p>
+        <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-rose-300">Sightline Analysis</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-rose-300">Throw Ratio Math</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-rose-300">Power & UPS Sizing</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-rose-300">Site Commissioning</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pro AV Engineering & System Integration Transition Spotlight -->
+    <div class="mt-10 glass-panel p-6 sm:p-8 rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-950/20 via-slate-900 to-cyan-950/20 relative overflow-hidden">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+        <div class="space-y-2 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono uppercase font-bold">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            Career Elevation & Pro AV Specialization
+          </div>
+          <h3 class="font-display text-2xl font-bold text-white">Leveraging Cinema Engineering Excellence into Enterprise Pro AV</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Combining 14+ years of mission-critical SLA management, multi-zone acoustics, high-throughput network engineering, and laser optics to engineer next-generation <strong>Corporate AV, Live Event Venues, Broadcast Spaces, Large-Scale LED Video Walls, and Q-SYS / Dante AV-over-IP Ecosystems</strong>.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="#contact" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-mono font-bold text-xs uppercase hover:shadow-lg hover:shadow-amber-500/20 transition-all text-center flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Discuss Pro AV Roles
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Interactive Cinema Signal Flow Simulator -->
+  <section id="signal-flow" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-10">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Interactive Architecture</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">DCI Cinema Signal Path Simulator</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Click any stage below to inspect real-time signal flow diagnostics, encryption boundaries, optical paths, and acoustic tuning standards.</p>
+    </div>
+
+    <!-- Signal Flow Node Pipeline -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+      <button class="signal-node p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-left hover:border-cyan-500/40 transition-all cursor-pointer group" data-node="ingest">
+        <div class="text-[10px] font-mono text-cyan-400 uppercase font-bold mb-1">Stage 01</div>
+        <div class="text-xs font-bold text-white group-hover:text-cyan-300">Ingest & KDM Security</div>
+        <div class="text-[11px] text-slate-400 font-mono mt-2">DCP, USB, LAN, KDM</div>
+      </button>
+      <button class="signal-node p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-left hover:border-cyan-500/40 transition-all cursor-pointer group" data-node="imb">
+        <div class="text-[10px] font-mono text-cyan-400 uppercase font-bold mb-1">Stage 02</div>
+        <div class="text-xs font-bold text-white group-hover:text-cyan-300">IMB / Decryption</div>
+        <div class="text-[11px] text-slate-400 font-mono mt-2">FIPS 140-2, ICMP-X</div>
+      </button>
+      <button class="signal-node active p-4 rounded-xl border border-cyan-400 bg-cyan-950/40 text-left hover:border-cyan-500/40 transition-all cursor-pointer group" data-node="optics">
+        <div class="text-[10px] font-mono text-cyan-400 uppercase font-bold mb-1">Stage 03</div>
+        <div class="text-xs font-bold text-white group-hover:text-cyan-300">Laser & 3-Chip DLP</div>
+        <div class="text-[11px] text-slate-400 font-mono mt-2">DCI-P3 14 fL, LLU</div>
+      </button>
+      <button class="signal-node p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-left hover:border-cyan-500/40 transition-all cursor-pointer group" data-node="sound">
+        <div class="text-[10px] font-mono text-cyan-400 uppercase font-bold mb-1">Stage 04</div>
+        <div class="text-xs font-bold text-white group-hover:text-cyan-300">Dante AoIP & Q-SYS DSP</div>
+        <div class="text-[11px] text-slate-400 font-mono mt-2">AES67, PTP v2, EQ</div>
+      </button>
+      <button class="signal-node p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-left hover:border-cyan-500/40 transition-all cursor-pointer group" data-node="speakers">
+        <div class="text-[10px] font-mono text-cyan-400 uppercase font-bold mb-1">Stage 05</div>
+        <div class="text-xs font-bold text-white group-hover:text-cyan-300">B-Chain Amplification</div>
+        <div class="text-[11px] text-slate-400 font-mono mt-2">85 dBC SPL, Atmos</div>
+      </button>
+    </div>
+
+    <!-- Active Stage Detail Card -->
+    <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 relative hud-corner">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+        <div>
+          <h3 id="flow-detail-title" class="font-display text-2xl font-bold text-white">3. Light Engine, Laser Phosphor / RGB & Optical Path</h3>
+          <p id="flow-detail-sub" class="text-xs font-mono text-cyan-400 mt-1">3-Chip DLP Cinema 0.98"/1.2" DMDs, Laser Light Upgrades (LLU) & Convergence Alignment</p>
+        </div>
+        <div class="text-xs font-mono px-3 py-1.5 rounded bg-slate-900 border border-slate-700 text-slate-300">
+          Status: <span class="text-emerald-400 font-bold">ACTIVE TELEMETRY</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+        <div class="lg:col-span-8 space-y-4">
+          <div>
+            <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-1">System Architecture & Workflow</h4>
+            <p id="flow-detail-desc" class="text-sm text-slate-300 leading-relaxed">Laser light sources pass through precision optical integrator rods and dichroic mirrors onto 3 independent Red, Green, and Blue DLP DMD chips. Mukesh performs precision convergence calibration, laser chiller loop flow monitoring, fold mirror cleaning, and DCI-P3 / Rec.709 colorimetry profiling.</p>
+          </div>
+          <div>
+            <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-1">Diagnostic Protocols & Failure Resolution</h4>
+            <p id="flow-detail-diag" class="text-sm text-amber-300/90 font-mono bg-slate-900/80 p-3 rounded-lg border border-slate-800">Common fault resolution: DMD convergence drift, laser diode driver fault, chiller flow rate interlock trip, light engine temperature delta alarms.</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 bg-slate-900/90 p-5 rounded-xl border border-slate-800 space-y-3 font-mono text-xs">
+          <div>
+            <span class="text-slate-400 block text-[11px] uppercase">OEM Hardware Units:</span>
+            <span id="flow-detail-hw" class="text-white font-semibold">Barco Series 2/4 (SP4K/DP4K), Christie RealLaser / CineLife, NEC NC Series</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[11px] uppercase">Technical Specifications:</span>
+            <span id="flow-detail-specs" class="text-cyan-300 font-semibold">DCI-P3 Color Gamut, 2000:1 to 6000:1 Contrast, Scheimpflug Optical Tilt, Active Liquid Chiller Loop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- DIAGNOSTIC LOGS TERMINAL (BARCO, DANTE, Q-SYS, DCI) -->
+  <section id="diagnostic-logs-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+      <div>
+        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Live Engineering Console
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Interactive Diagnostic Log Terminal</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-2xl">Stream, filter, and analyze real-world diagnostic telemetry for <strong>Barco Laser Projectors</strong>, <strong>Audinate Dante AoIP</strong>, <strong>Q-SYS Core DSP</strong>, and <strong>DCI Security</strong>.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">
+          <div id="terminal-status-indicator" class="w-2.5 h-2.5 rounded-full bg-emerald-400 live-indicator"></div>
+          <span class="text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">Live Telemetry</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terminal Window Container -->
+    <div class="terminal-window rounded-2xl border border-cyan-500/20 overflow-hidden shadow-2xl bg-black/90">
+
+      <!-- Terminal Top Control Bar -->
+      <div class="terminal-header bg-slate-950/90 px-4 sm:px-6 py-3.5 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+
+        <!-- System Filter Buttons -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-mono text-slate-400 uppercase font-bold mr-1">Filter:</span>
+          <button class="log-filter-btn px-3 py-1 rounded bg-cyan-500 text-slate-950 font-bold text-xs font-mono shadow-sm" data-log-system="all">ALL SYSTEMS</button>
+          <button class="log-filter-btn px-3 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono hover:bg-slate-800" data-log-system="barco">BARCO</button>
+          <button class="log-filter-btn px-3 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono hover:bg-slate-800" data-log-system="dante">DANTE</button>
+          <button class="log-filter-btn px-3 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono hover:bg-slate-800" data-log-system="qsys">Q-SYS</button>
+          <button class="log-filter-btn px-3 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono hover:bg-slate-800" data-log-system="dci">DCI SECURITY</button>
+        </div>
+
+        <!-- Terminal Actions -->
+        <div class="flex items-center gap-2">
+          <button id="log-stream-toggle" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono hover:bg-slate-800 transition-colors">
+            <i data-lucide="pause" class="w-3.5 h-3.5 text-amber-400"></i> Pause Stream
+          </button>
+          <button id="log-clear-btn" class="p-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" title="Clear Terminal Logs">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+          </button>
+          <button id="log-download-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono hover:bg-cyan-500/20 transition-colors" title="Download Diagnostic Log File">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Export .log
+          </button>
+        </div>
+      </div>
+
+      <!-- Log Output Stream Area -->
+      <div id="terminal-log-body" class="terminal-body font-mono text-slate-300 space-y-1 p-5 h-96 overflow-y-auto bg-[#04070d]">
+        <!-- Logs dynamically rendered by app.js -->
+      </div>
+
+      <!-- CLI Interactive Prompt Bar -->
+      <div class="bg-slate-950 px-5 py-3 border-t border-slate-800/80 flex items-center gap-3">
+        <span class="text-cyan-400 font-bold text-xs font-mono shrink-0">mukesh@cinema-fleet-host:~$</span>
+        <input type="text" id="terminal-cmd-input" class="w-full bg-transparent border-none text-xs text-white font-mono placeholder-slate-600 focus:outline-none" placeholder="Type a command (try 'help', 'barco', 'dante', 'qsys', 'status', 'clear')...">
+        <span class="text-[10px] font-mono text-slate-500 hidden sm:inline-block">Press Enter</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- DCI Screen Lumens & Foot-Lambert Engineering Calculator -->
+  <section id="dci-calculator" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Engineering Tool</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">DCI Screen Lumens & Projector Sizing Lab</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Compute required ANSI lumens based on auditorium screen width, aspect ratio, silver/matte screen gain, and SMPTE ST 431-1 reference luminance targets (14.0 fL 2D / 4.5 fL 3D).</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Calculator Inputs -->
+      <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold">Screen Width:</label>
+            <span id="calc-width-val" class="text-xs font-mono text-cyan-400 font-bold">40 ft (12.2 m)</span>
+          </div>
+          <input type="range" id="calc-width" min="15" max="85" step="1" value="40" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+            <span>15 ft (Small)</span>
+            <span>40 ft (Standard)</span>
+            <span>60 ft (Large)</span>
+            <span>85 ft (Giant PLF)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-2">Aspect Ratio:</label>
+            <select id="calc-aspect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs font-mono text-slate-200 focus:border-cyan-500 focus:outline-none">
+              <option value="scope" selected>CinemaScope (2.39:1)</option>
+              <option value="flat">Flat / Academic (1.85:1)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-2">Projection Target:</label>
+            <select id="calc-mode" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs font-mono text-slate-200 focus:border-cyan-500 focus:outline-none">
+              <option value="2d" selected>DCI 2D (14.0 fL Target)</option>
+              <option value="3d">DCI 3D (4.5 fL Target)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold">Screen Surface Gain:</label>
+            <span id="calc-gain-val" class="text-xs font-mono text-amber-400 font-bold">1.8x</span>
+          </div>
+          <input type="range" id="calc-gain" min="1.0" max="3.0" step="0.1" value="1.8" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+            <span>1.0x (Matte White)</span>
+            <span>1.8x (Silver 3D Screen)</span>
+            <span>3.0x (High Gain)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator Results HUD -->
+      <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hud-corner relative space-y-5">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Calculated DCI Output</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            SMPTE ST 431-1
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-[10px] font-mono uppercase text-slate-400 block">Screen Surface Area</span>
+            <span id="calc-result-area" class="font-display text-xl font-bold text-white mt-1 block">670 sq ft (62.2 m²)</span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-[10px] font-mono uppercase text-slate-400 block">Center Luminance</span>
+            <span id="calc-result-fl" class="font-display text-xl font-bold text-amber-400 mt-1 block">14.0 fL (DCI)</span>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-gradient-to-br from-cyan-950/40 to-slate-900 border border-cyan-500/30">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 block font-semibold">Recommended Operating Projector Output (with 18% Headroom)</span>
+          <span id="calc-result-lumens" class="font-display text-3xl sm:text-4xl font-bold text-white mt-1 block">19,500 ANSI Lumens</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <span class="text-[11px] font-mono uppercase text-slate-400 block font-bold mb-1">Recommended OEM Projector Class:</span>
+          <p id="calc-result-rec" class="text-xs font-mono text-emerald-400 leading-relaxed">Barco Series 4 SP4K-20 / Christie CP4415-RGB RealLaser (Medium Auditoriums)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Barco Cinema Lens & Throw Ratio Calculator -->
+  <section id="barco-lens-calculator" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-rose-500">Optical Engineering</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Barco Cinema Lens & Throw Ratio Calculator</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Calculate the exact optical throw ratio based on projection booth distance and auditorium screen width, and determine the correct Barco Series 2/4 DCI cinema lens.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Calculator Inputs -->
+      <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-8">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold">Auditorium Screen Width:</label>
+            <span id="barco-width-val" class="text-xs font-mono text-cyan-400 font-bold">40 ft (12.2 m)</span>
+          </div>
+          <input type="range" id="barco-width" min="15" max="85" step="1" value="40" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+            <span>15 ft</span>
+            <span>85 ft</span>
+          </div>
+        </div>
+
+        <div>
+           <div class="flex justify-between items-center mb-2">
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold">Projection Throw Distance:</label>
+            <span id="barco-dist-val" class="text-xs font-mono text-amber-400 font-bold">75 ft (22.9 m)</span>
+          </div>
+          <input type="range" id="barco-dist" min="20" max="250" step="1" value="75" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+            <span>20 ft (Port Window)</span>
+            <span>250 ft (Rear Auditorium)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator Results HUD -->
+      <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hud-corner relative space-y-5">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Optical Path Telemetry</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+            BARCO OPTICS
+          </span>
+        </div>
+
+        <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+          <span class="text-xs font-mono uppercase text-slate-300 block font-semibold">Calculated Throw Ratio:</span>
+          <span id="barco-result-ratio" class="font-display text-3xl font-bold text-amber-400 block">1.88:1</span>
+        </div>
+
+        <div class="p-5 rounded-xl bg-gradient-to-br from-rose-950/40 to-slate-900 border border-rose-500/30 mt-4">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-rose-400 block font-semibold mb-2">Recommended Barco DCI Cinema Lens</span>
+          <span id="barco-result-lens" class="font-display text-2xl sm:text-3xl font-bold text-white block">Motorized Lens (1.70 - 2.50:1)</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <span class="text-[11px] font-mono uppercase text-slate-400 block font-bold mb-1">Optical Note:</span>
+          <p id="barco-result-note" class="text-xs font-mono text-slate-400 leading-relaxed">Ideal lens formulation for medium/large auditoriums. Leaves sufficient optical zoom buffer for flat/scope masking adjustments.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Web Audio API Acoustic Studio & Spectrum Visualizer -->
+  <section id="audio-visualizer-section" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Acoustic Room Tuning</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Web Audio API Test Tone Studio</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-2xl">Generate reference calibration tones in real time using the browser's Web Audio synthesizer and inspect frequency distribution on the live audio canvas.</p>
+    </div>
+
+    <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+
+      <!-- Audio Controls Bar -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        <div class="md:col-span-4">
+          <label class="text-xs font-mono uppercase text-slate-400 block mb-2 font-bold">Calibration Waveform / Tone:</label>
+          <select id="audio-tone-select" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs font-mono text-slate-200 focus:border-cyan-500 focus:outline-none">
+            <option value="1khz" selected>1 kHz Reference Sine Tone (SPL Calibration)</option>
+            <option value="lfe40hz">40 Hz Subwoofer LFE Resonance Tone</option>
+            <option value="pinknoise">Pink Noise (1/3-Octave RTA Acoustic Tuning)</option>
+          </select>
+        </div>
+
+        <div class="md:col-span-4">
+          <div class="flex justify-between text-xs font-mono text-slate-400 mb-2 font-bold">
+            <span>Output Level:</span>
+            <span>Safe Volume</span>
+          </div>
+          <input type="range" id="audio-volume" min="0.01" max="0.3" step="0.01" value="0.1" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+        </div>
+
+        <div class="md:col-span-4 flex items-end">
+          <button id="audio-play-btn" class="w-full py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold font-mono text-xs uppercase hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+            <i data-lucide="play" class="w-4 h-4"></i> Play Test Tone
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Frequency Canvas Display -->
+      <div class="rounded-xl bg-black border border-slate-800 overflow-hidden relative p-2">
+        <div class="absolute top-4 left-4 z-10">
+          <span id="audio-status-label" class="text-[11px] font-mono text-slate-400 bg-slate-900/90 px-3 py-1 rounded border border-slate-800">
+            Oscillator Idle (Click Play to emit reference calibration tone)
+          </span>
+        </div>
+        <canvas id="audio-canvas" class="w-full h-32 block"></canvas>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- VERIFIED OEM CERTIFICATIONS GRID WITH CRISP LOGOS -->
+  <section id="certifications" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Verified Credentials</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">OEM Certifications & Engineering Qualifications</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-2xl">Official manufacturer certifications from Barco, Audinate Dante, QSC/Q-SYS, Christie, NEC, and Lightware Visual Engineering.</p>
+      </div>
+      <div id="cert-count-badge" class="text-xs font-mono text-slate-400 bg-slate-900 px-3.5 py-1.5 rounded-lg border border-slate-800 shrink-0">
+        Showing 11 Verified Certifications
+      </div>
+    </div>
+
+    <!-- Filter & Search Toolbar -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-between items-stretch sm:items-center mb-8">
+      <div class="flex items-center gap-2 flex-wrap">
+        <button class="cert-filter-btn px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs font-mono" data-filter="all">ALL (11)</button>
+        <button class="cert-filter-btn px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono hover:bg-slate-800" data-filter="projection">PROJECTION</button>
+        <button class="cert-filter-btn px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono hover:bg-slate-800" data-filter="audio">AUDIO & DSP</button>
+        <button class="cert-filter-btn px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono hover:bg-slate-800" data-filter="networking">NETWORKING & IP</button>
+      </div>
+
+      <div class="relative min-w-[240px]">
+        <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-3"></i>
+        <input type="text" id="cert-search" class="w-full bg-slate-900 border border-slate-800 rounded-lg pl-9 pr-3 py-2 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500" placeholder="Search certs (e.g. Barco, Dante, Q-SYS)...">
+      </div>
+    </div>
+
+    <!-- Certifications Grid with Custom SVG Logos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- CERT 1: AUDINATE DANTE LEVEL 1 -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between" data-category="audio networking">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Dante / Audinate Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center p-1.5 overflow-hidden">
+              <img src="Dante_Logo.jpg" alt="Audinate Dante Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 uppercase">
+              Audinate Certified
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Dante Level 1 Certification</h3>
+          <p class="text-xs font-mono text-sky-400 mb-3">Audinate Audio-over-IP (AoIP)</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Certified in foundational Dante digital audio routing, uncompressed PCM audio streaming over standard IP, PTP master clocking, latency configuration, and Dante Controller management.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Audinate Pty Ltd</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 2: QSC / Q-SYS CINEMA 101 -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between" data-category="audio">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Q-SYS / QSC Custom SVG Logo -->
+            <div class="brand-logo-container w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center p-2">
+              <svg class="w-8 h-8 text-amber-400" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="15" y="15" width="70" height="70" rx="14" fill="none" stroke="currentColor" stroke-width="8"/>
+                <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" stroke-width="6"/>
+                <line x1="50" y1="20" x2="50" y2="34" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                <line x1="50" y1="66" x2="50" y2="80" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                <line x1="20" y1="50" x2="34" y2="50" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                <line x1="66" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase">
+              QSC Certified
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Cinema 101 – Sound & System Training</h3>
+          <p class="text-xs font-mono text-amber-400 mb-3">Q-SYS / QSC Audio Systems</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Certified in Q-SYS Core cinema DSP engine architecture, DCA / DPA-Q multi-channel power amplifier integration, loudspeaker telemetry line monitoring, and cinema acoustic tuning.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: QSC LLC</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 3: BARCO SERIES 4 LEVEL 2 DIAGNOSTICS -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-rose-500/40 transition-all flex flex-col justify-between" data-category="projection">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Barco Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-2 overflow-hidden">
+              <img src="BARCO_logo.png" alt="Barco Official Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20 uppercase">
+              Barco Certified
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Barco Series 4 – Level 2 Diagnostics</h3>
+          <p class="text-xs font-mono text-rose-400 mb-3">Barco Digital Cinema</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Certified in Barco Series 4 4K laser projector maintenance, Barco Alchemy ICMP-X media server marriage, optical light engine alignment, chiller loops, and board-level troubleshooting.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Barco NV</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 4: BARCO LASER LIGHT UPGRADE (LLU) -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-rose-500/40 transition-all flex flex-col justify-between" data-category="projection">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Barco Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-2 overflow-hidden">
+              <img src="BARCO_logo.png" alt="Barco Official Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20 uppercase">
+              Barco Certified
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Laser Light Upgrade (LLU) Retrofit</h3>
+          <p class="text-xs font-mono text-rose-400 mb-3">Barco Series 2 to Laser Conversion</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Authorized in converting legacy Xenon lamp-based DP2K Series 2 projectors to high-efficiency laser phosphor engines, thermal safety interlocks, and optical path optimization.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Barco NV</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 5: LIGHTWARE AV-OVER-IP -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all flex flex-col justify-between" data-category="networking">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Lightware Custom SVG Logo -->
+            <div class="brand-logo-container w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center p-2">
+              <svg class="w-8 h-8 text-purple-400" viewBox="0 0 100 100" fill="currentColor">
+                <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" fill="none" stroke="currentColor" stroke-width="7"/>
+                <circle cx="50" cy="40" r="10" fill="currentColor"/>
+                <path d="M30 70 L50 50 L70 70" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 uppercase">
+              Lightware Certified
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Lightware Academy – AV-over-IP</h3>
+          <p class="text-xs font-mono text-purple-400 mb-3">Lightware Visual Engineering</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Certified in enterprise UBEX / VINX AV-over-IP architectures, uncompressed 4K video distribution, EDID management, and matrix switching over 1GbE/10GbE network fabrics.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Lightware Academy</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 6: CHRISTIE DIGITAL PROJECTION -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-red-500/40 transition-all flex flex-col justify-between" data-category="projection">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Christie Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center p-1.5 overflow-hidden">
+              <img src="Christie-Logo.JPG" alt="Christie Digital Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-red-500/10 text-red-400 border border-red-500/20 uppercase">
+              Christie Trained
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Christie Digital Cinema Systems</h3>
+          <p class="text-xs font-mono text-red-400 mb-3">CP2220 / CP2230 / RealLaser RGB</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Hands-on qualification in Christie CineLife & RealLaser RGB pure laser projectors, touch panel controller (TPC) setup, DMD optical alignment, and light engine maintenance.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Christie Digital</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 7: NEC DCI LASER PROJECTORS -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="projection">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- NEC Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center p-1.5 overflow-hidden">
+              <img src="NEC_LOGO.png" alt="NEC Official Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">
+              NEC Trained
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">NEC NC Series Laser Projectors</h3>
+          <p class="text-xs font-mono text-emerald-400 mb-3">NEC NC1200C / NC1202L / NC1402L</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Field expertise in NEC compact laser cinema projectors, sealed optical engine maintenance, filterless cooling systems, and DCI color space verification.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Sharp NEC Display Solutions</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 8: DOLBY CINEMA AUDIO PROCESSORS -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between" data-category="audio">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Dolby Official Logo -->
+            <div class="brand-logo-container w-16 h-12 rounded-xl bg-white border border-slate-700 flex items-center justify-center p-1.5 overflow-hidden">
+              <img src="Dolby Atmos.png" alt="Dolby Official Logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
+              Dolby Systems
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Dolby CP750 / CP850 / CP950</h3>
+          <p class="text-xs font-mono text-cyan-400 mb-3">Cinema Audio Processors & Atmos</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Comprehensive calibration of Dolby Cinema audio processors, Cat5/Cat6 AES digital inputs, B-chain equalization, and Dolby Atmos multi-screen channel mapping.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: Dolby Laboratories</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+      <!-- CERT 9: COMPUTER HARDWARE & NETWORKING DIPLOMA -->
+      <div class="cert-card glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between" data-category="networking">
+        <div>
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <!-- Hardware / IHT Logo -->
+            <div class="brand-logo-container w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center p-2">
+              <svg class="w-8 h-8 text-cyan-400" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="20" y="20" width="60" height="45" rx="6" fill="none" stroke="currentColor" stroke-width="7"/>
+                <line x1="35" y1="75" x2="65" y2="75" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                <line x1="50" y1="65" x2="50" y2="75" stroke="currentColor" stroke-width="7"/>
+                <circle cx="50" cy="42" r="8" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
+              1-Year Diploma
+            </span>
+          </div>
+
+          <h3 class="font-display text-lg font-bold text-white mb-1">Hardware & Computer Networking</h3>
+          <p class="text-xs font-mono text-cyan-400 mb-3">IHT Moradabad, Uttar Pradesh</p>
+          <p class="text-xs text-slate-300 leading-relaxed">Formal 1-year diploma covering computer hardware architecture, TCP/IP networking, LAN/WAN topologies, router configuration, server administration, and structured cabling.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <span>Authority: IHT Moradabad</span>
+          <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Verified</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="laser-divider max-w-7xl mx-auto my-4"></div>
+
+  <!-- Direct Contact & Print Section -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+      <!-- Left Contact Info -->
+      <div class="lg:col-span-6 space-y-6">
+        <div>
+          <span class="text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400">Get In Touch</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Connect With Mukesh Kumar</h2>
+          <p class="text-slate-400 text-sm mt-2">Available for Senior AV / Cinema Engineering Leadership, Project Management, and Global Consulting engagements.</p>
+        </div>
+
+        <div class="space-y-4 font-mono text-xs">
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-slate-200 select-all font-semibold break-all">mukesh0792@outlook.com</span>
+            </div>
+            <button id="copy-email-btn" class="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-cyan-400 transition-colors" title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+              <span class="text-slate-200 select-all font-semibold">+91 82797 17884</span>
+            </div>
+            <button id="copy-phone-btn" class="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-amber-400 transition-colors" title="Copy Phone">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+              <span class="text-slate-200 font-semibold">Jaipur, Rajasthan, India (Open to Relocation)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex flex-wrap gap-4">
+          <button onclick="window.print()" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-amber-500 text-slate-950 font-bold text-xs uppercase font-mono hover:opacity-95 shadow-lg shadow-cyan-500/20 transition-all flex items-center gap-2">
+            <i data-lucide="printer" class="w-4 h-4"></i> Export PDF Resume
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Contact Form -->
+      <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hud-corner relative">
+        <h3 class="font-display text-xl font-bold text-white mb-2">Send Engineering Message</h3>
+        <p class="text-xs font-mono text-slate-400 mb-6">Drop a direct message regarding technical consultations, audits, or career opportunities.</p>
+
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-1">Your Name</label>
+            <input type="text" id="form-name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500" placeholder="e.g. John Doe / Organization">
+          </div>
+
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-1">Your Email</label>
+            <input type="email" id="form-email" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500" placeholder="e.g. name@company.com">
+          </div>
+
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-1">Subject</label>
+            <input type="text" id="form-subject" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500" placeholder="e.g. Cinema Equipment Audit">
+          </div>
+
+          <div>
+            <label class="text-xs font-mono uppercase text-slate-300 font-semibold block mb-1">Message / Inquiry</label>
+            <textarea id="form-message" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500" placeholder="Discuss multiplex fleet upgrades, laser retrofit planning, or audio DSP tuning..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-cyan-500 text-slate-950 font-bold font-mono text-xs uppercase hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+            <i data-lucide="send" class="w-4 h-4"></i> Dispatch Transmission
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 px-6 py-4 rounded-xl bg-slate-900 border border-cyan-500/30 text-white shadow-2xl transition-all duration-300 transform translate-y-12 opacity-0 z-[100]">
+    <div class="flex items-center gap-3 text-sm font-mono">
+      <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+      <span id="toast-message"></span>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-900 bg-cinema-950 text-center text-xs font-mono text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p class="text-slate-400 font-semibold">MUKESH KUMAR • SENIOR AV & DIGITAL CINEMA PROJECTION ENGINEER</p>
+      <p>SMPTE DCI Standards • Barco • Christie • NEC • Audinate Dante • Q-SYS Core • Dolby Atmos</p>
+      <p class="text-slate-600 text-[11px] pt-2">© 2026 Mukesh Kumar. Designed with Custom Dark Cinema Control Room HUD.</p>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
