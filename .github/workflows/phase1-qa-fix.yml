@@ -1,3 +1,4 @@
+# One-time Phase 1 QA fixer
 name: Apply Phase 1 QA fixes
 
 on:
@@ -23,7 +24,6 @@ jobs:
 
           root = Path('.')
 
-          # ---------- index.html ----------
           p = root / 'index.html'
           s = p.read_text(encoding='utf-8')
 
@@ -62,12 +62,9 @@ jobs:
           s = s.replace('Master Fleet Telemetry', 'Fleet Telemetry Demo')
           s = s.replace('LIVE TELEMETRY', 'SIMULATED TELEMETRY')
           s = s.replace('Status: ACTIVE TELEMETRY', 'Status: DEMO TELEMETRY')
-          # Change only the telemetry badge token where present.
           s = s.replace('>ONLINE</span>', '>DEMO</span>', 1)
-
           p.write_text(s, encoding='utf-8')
 
-          # ---------- app.js ----------
           p = root / 'app.js'
           s = p.read_text(encoding='utf-8')
 
@@ -99,22 +96,18 @@ jobs:
           else:
               raise SystemExit('Lens recommendation block not found; aborting without commit.')
 
-          # Keep the navigation state accessible to assistive tech.
           s = s.replace("mobileMenuBtn.addEventListener('click', () => {\n      mobileMenu.classList.toggle('hidden');", "mobileMenuBtn.addEventListener('click', () => {\n      mobileMenu.classList.toggle('hidden');\n      mobileMenuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));")
           s = s.replace("mobileMenu.querySelectorAll('a').forEach(link => {\n      link.addEventListener('click', () => {\n        mobileMenu.classList.add('hidden');", "mobileMenu.querySelectorAll('a').forEach(link => {\n      link.addEventListener('click', () => {\n        mobileMenu.classList.add('hidden');\n        mobileMenuBtn.setAttribute('aria-expanded', 'false');")
 
           p.write_text(s, encoding='utf-8')
 
-          # ---------- styles.css ----------
           p = root / 'styles.css'
           s = p.read_text(encoding='utf-8')
-
           anchor_css = '''\n/* Phase 1 QA: keep anchor targets clear of the fixed header. */\nhtml {\n  scroll-padding-top: 88px;\n}\n\nsection[id], footer[id] {\n  scroll-margin-top: 88px;\n}\n\n@media (max-width: 767px) {\n  #mobile-menu {\n    max-height: calc(100vh - 80px);\n    overflow-y: auto;\n  }\n\n  .terminal-body {\n    overflow-x: hidden;\n  }\n\n  .terminal-window .log-entry {\n    display: block;\n    padding: 8px 0;\n  }\n\n  .terminal-window .log-entry > * {\n    max-width: 100%;\n    overflow-wrap: anywhere;\n    word-break: break-word;\n  }\n\n  .terminal-window .log-entry > :last-child {\n    display: block;\n    margin-top: 4px;\n    white-space: normal;\n  }\n}\n'''
           if 'Phase 1 QA: keep anchor targets clear of the fixed header.' not in s:
               s += anchor_css
           p.write_text(s, encoding='utf-8')
 
-          # ---------- basic assertions ----------
           idx = (root / 'index.html').read_text(encoding='utf-8')
           js = (root / 'app.js').read_text(encoding='utf-8')
           css = (root / 'styles.css').read_text(encoding='utf-8')
