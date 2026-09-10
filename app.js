@@ -142,27 +142,26 @@ function initBarcoLensCalculator() {
     let lensName = '';
     let opticalNote = '';
 
-    if (throwRatio < 1.20) {
-      lensName = 'Barco Ultra-Short Throw DCI Lens (0.80 - 1.16:1)';
-      opticalNote = 'Ultra short throw booth configuration. Requires precision Scheimpflug optical plane adjustment to eliminate corner chromatic aberration.';
-    } else if (throwRatio >= 1.20 && throwRatio < 1.45) {
-      lensName = 'Barco High-Brightness Motorized Lens (1.20 - 1.70:1)';
-      opticalNote = 'High light efficiency optical path (>86% transmission). Optimal for short-to-medium auditorium depths with wide viewing angles.';
-    } else if (throwRatio >= 1.45 && throwRatio < 2.05) {
-      lensName = 'Barco High-Performance Zoom Lens (1.38 - 2.05:1)';
-      opticalNote = 'Standard commercial cinema configuration (PVR INOX reference). Ample zoom range for Flat (1.85) to Scope (2.39) motorized lens memory recall.';
-    } else if (throwRatio >= 2.05 && throwRatio < 2.60) {
-      lensName = 'Barco High-Contrast Cinema Lens (1.70 - 2.50:1)';
-      opticalNote = 'Ideal optical formulation for medium-to-large auditoriums. Excellent native contrast ratio retention across the entire DMD optical path.';
-    } else if (throwRatio >= 2.60 && throwRatio < 3.30) {
-      lensName = 'Barco Long-Throw Motorized Lens (2.20 - 3.20:1)';
-      opticalNote = 'Long throw geometry. Recommend Barco Series 4 high-output laser engines (SP4K-27 / SP4K-35) with high-gain screen surface to meet SMPTE 14.0 fL.';
-    } else if (throwRatio >= 3.30 && throwRatio < 4.40) {
-      lensName = 'Barco Extra-Long Throw Cinema Lens (3.00 - 4.30:1)';
-      opticalNote = 'Deep auditorium booth placement. Requires rigid optical mounting and low-vibration port window glass to prevent focal plane shift.';
+    // Match only the throw-ratio ranges currently displayed by this calculator.
+    // These ranges are not presented as independently validated official Barco specifications.
+    const supportedLensRanges = [
+      { min: 0.80, max: 1.16, name: 'Barco Ultra-Short Throw DCI Lens (0.80 - 1.16:1)', note: 'Ultra short throw booth configuration. Requires precision Scheimpflug optical plane adjustment to eliminate corner chromatic aberration.' },
+      { min: 1.20, max: 1.70, name: 'Barco High-Brightness Motorized Lens (1.20 - 1.70:1)', note: 'High light efficiency optical path (>86% transmission). Optimal for short-to-medium auditorium depths with wide viewing angles.' },
+      { min: 1.38, max: 2.05, name: 'Barco High-Performance Zoom Lens (1.38 - 2.05:1)', note: 'Standard commercial cinema configuration (PVR INOX reference). Ample zoom range for Flat (1.85) to Scope (2.39) motorized lens memory recall.' },
+      { min: 1.70, max: 2.50, name: 'Barco High-Contrast Cinema Lens (1.70 - 2.50:1)', note: 'Ideal optical formulation for medium-to-large auditoriums. Excellent native contrast ratio retention across the entire DMD optical path.' },
+      { min: 2.20, max: 3.20, name: 'Barco Long-Throw Motorized Lens (2.20 - 3.20:1)', note: 'Long throw geometry. Recommend Barco Series 4 high-output laser engines (SP4K-27 / SP4K-35) with high-gain screen surface to meet SMPTE 14.0 fL.' },
+      { min: 3.00, max: 4.30, name: 'Barco Extra-Long Throw Cinema Lens (3.00 - 4.30:1)', note: 'Deep auditorium booth placement. Requires rigid optical mounting and low-vibration port window glass to prevent focal plane shift.' },
+      { min: 4.30, max: 6.00, name: 'Barco Ultra-Long Throw Optical System (4.30 - 6.00:1)', note: 'Maximum auditorium throw envelope. Requires high-power laser illumination and periodic laser optical alignment checks.' }
+    ];
+
+    const matchedLens = supportedLensRanges.find(range => throwRatio >= range.min && throwRatio <= range.max);
+
+    if (matchedLens) {
+      lensName = matchedLens.name;
+      opticalNote = matchedLens.note;
     } else {
-      lensName = 'Barco Ultra-Long Throw Optical System (4.30 - 6.00:1)';
-      opticalNote = 'Maximum auditorium throw envelope. Requires high-power laser illumination and periodic laser optical alignment checks.';
+      lensName = 'No Supported Barco Lens Match';
+      opticalNote = 'Calculated throw ratio is outside the supported ranges currently displayed by this calculator. Verify projector/lens compatibility using the applicable Barco documentation before installation.';
     }
 
     resultLens.textContent = lensName;
