@@ -12,8 +12,6 @@ new_resume = '''        <a href="resume.pdf" target="_blank" rel="noopener" clas
         </a>'''
 if html.count(old_resume) != 1:
     raise SystemExit(f'Expected exactly 1 desktop PDF Resume button, found {html.count(old_resume)}')
-if 'resume.pdf' not in html:
-    raise SystemExit('resume.pdf is not present in the site')
 index.write_text(html.replace(old_resume, new_resume, 1), encoding='utf-8')
 
 app = Path('app.js')
@@ -73,6 +71,7 @@ new_block = '''    let lensName = '';
 
     resultLens.textContent = lensName;
     resultNote.textContent = opticalNote;'''
-if js.count(old_block) != 1:
-    raise SystemExit(f'Expected exactly 1 Barco recommendation block, found {js.count(old_block)}')
-app.write_text(js.replace(old_block, new_block, 1), encoding='utf-8')
+if old_block not in js:
+    raise SystemExit('Barco recommendation block not found; aborting.')
+js = js.replace(old_block, new_block, 1)
+app.write_text(js, encoding='utf-8')
