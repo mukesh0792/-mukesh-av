@@ -1,11 +1,33 @@
-name: Phase 1B QA Runner
+name: Phase 1B Functional QA Fixes
 
 on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
-  test:
+  patch:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Phase 1B runner active"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Apply fixes
+        run: python3 scripts/apply_phase1b.py
+      - name: Verify
+        run: |
+          grep -Fq 'href="resume.pdf"' index.html
+          grep -Fq 'No Supported Barco Lens Match' app.js
+          grep -Fq 'const supportedLensRanges' app.js
+          grep -Fq 'window.print()' index.html
+          git diff --check
+      - name: Commit fixes and remove one-time files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html app.js
+          git commit -m "fix: Phase 1B Barco range and resume behavior"
+          git rm .github/workflows/apply-phase1b.yml scripts/apply_phase1b.py .phase1b-trigger
+          git commit -m "chore: remove one-time Phase 1B fixer"
+          git push
