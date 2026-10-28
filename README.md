@@ -126,6 +126,23 @@ V8 physically moves the projector SVG from the global fixed decorative layer int
 
 The independent Canvas2D RGB light field is still fixed to the viewport, moving with scrolling and dimming behind content. Before Contact is visible it uses a bottom-centre **virtual light origin**; as the Contact illustration becomes visible, it smoothly blends its RGB light origin to the true upward-facing lens position via SVG screen transformation. Thus the effect is retained without inadvertently displaying the projector on every section. CSS and JS cache versions are bumped. Resume/print, project information, career data, logos and links are not changed.
 
+## V9 professional dual-purpose portfolio redesign (29 Oct 2026)
+
+**Goal:** Serve both international digital-cinema / AV technical recruiters and engineering-AI collaborators in one credible public portfolio. The site should prioritize verified professional experience and useful technical work, with a separate direct route for independent Cinema AI innovation.
+
+### Homepage decisions
+- **Recruiter-first hero:** "Engineering cinema systems. Building what's next." with current verified PVR INOX Manager – Sound & Projection role, dynamic experience since July 2011, Barco Series 4 Level 2 and direct Engineering Work / Cinema AI / printable-profile links.
+- **Two pathways near the top:** Engineering Career and Innovation & AI are full keyboard-accessible anchor cards leading directly to the relevant sections; no separate landing pages or duplicate content.
+- **Content order:** Hero → two pathways → Expertise → representative Engineering Work → OEM Certifications and additional AV training → Experience → Cinema AI / Regional PPM projects → Contact. The career path is easy to scan; AI remains one click away.
+- **Engineering work:** Representative commissioning, fault-isolation, and show-control workflows, with explicitly labeled engineering steps and privacy disclaimer. No invented site-specific case outcomes, quantified reliability gains, client information or unaudited project claims.
+- **Current achievements vs plans:** AI cards retain in-development labels and separate engineering foundation from pending work. All employer, certification, education, training and project statements remain at their verified existing scope.
+- **Visual system:** Added `portfolio-v9.css` loaded only on `index.html` after shared styles.css. Navy/charcoal design, restrained cyan accent, calm metadata, compact photo, modern responsive cards, less dominant RGB overlay, and Contact-only decorative projector. `resume.html` remains on original shared styles, visually unaffected.
+- **Accessibility & performance:** Native anchors and details navigation, visible focus, mobile tap targets, reduced motion, high contrast, no new JavaScript dependencies, fonts or trackers, original strict CSP. Page still uses only local existing scripts and image assets. Tablet hero stacks rather than squeezing text beside a large photo.
+- **Deployment process:** Branch → static structural and cross-device source validation → reviewed PR and merge → successful GitHub Pages deployment → check live HTML/CSS/assets. Do not claim actual perceptual mobile balance has been verified without direct device evidence.
+
+### Future content opportunity
+Add **sanitized, verified engineering case studies** only after their actual problem, diagnostic steps, approved evidence and repair/commissioning outcome are corroborated and cleared for public use. In the meantime, the site uses representative technical workflows rather than fabricated achievements. If a direct-downloadable PDF CV becomes available, link to its verified public file instead of falsely advertising the printable HTML as PDF.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
