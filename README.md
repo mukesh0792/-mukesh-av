@@ -51,6 +51,13 @@ Audited the 2-page owner-uploaded PDF `Kumar Cinema Service Technician & AV.pdf`
 - Website retains Diploma in Computer Hardware & Networking (IHT Moradabad, 2010); earlier-school qualifications, passport status and 30-day notice are omitted from evergreen public portfolio content because they are less important or may become stale.
 - The user's uploaded source PDF is **not** copied or linked on the public website.
 
+## Q-SYS and Lightware company-logo correction (28 Oct 2026)
+Previously the QSC Q-SYS Cinema 101 and Lightware AV-over-IP Basics training entries displayed only styled text labels instead of the logo graphics. The website homepage and printable profile now render brand image references:
+- **Q-SYS:** PNG image hosted by Lightware on its partner-assets system: `https://assets.prod.lwm.lightware.com/public/strapi/q_sys_logo_de43a9aac0.png`.
+- **Lightware:** official current company SVG: `https://www.lightware.com/images/logo.svg`.
+
+These assets are displayed solely to identify the training organizations, not as forged certificate seals. Mobile and print badges remain small and retain visible training details as text. Their HTTPS origins are allowlisted exclusively for image loading in CSP; no third-party scripts, analytics, trackers or styles were added. As externally hosted images, continued availability depends on the supplier and their brand rules; future authorized local assets would improve reliability.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
