@@ -72,6 +72,17 @@ A phone-browser report confirmed that the static projector silhouette rendered b
 
 Fix: version **both** CSS and JS URLs, switch scroll-phase thresholds to viewport-based milestones (rays after 32px, bars after 0.85 screen, framing after 2.05 screens), strengthen carefully bounded beam alpha, and move test patterns into the mobile viewport. Mobile uses `mix-blend-mode:screen` to preserve white text brightness, screen-only responsive opacity, and no pointer handling. Respect high-contrast and reduced-motion preferences; print remains effect-free. These adjustments are intended to make the effects noticeable without obscuring links or copy. Visual quality should also be confirmed on a real mobile browser; automated source/static tests cannot prove human-perceived contrast.
 
+## Scroll-reactive rainbow projection v3 (28 Oct 2026)
+Owner mobile feedback: projector and RGB calibration rectangles disappear under some sections, RGB bands look too sharp, and light should behave like a cinema dimmer — brighter in empty space, gradually softer over readable content while sliding continuously with scroll.
+
+The v3 homepage design replaces abrupt fixed-phase colour bars with a **soft, continuous seven-colour rainbow beam** rendered in a single local `cinema-ambient.js` Canvas2D layer. Light originates near the existing hand-drawn SVG projector lens. Broad, blurred curved strokes with pastel red/orange/yellow/green/cyan/blue/violet are supported by faint radial glows over the entire viewport. Scroll progress causes smooth bounded movement; no perpetual animation when the user stops interacting.
+
+The auto-dimmer uses Canvas2D `destination-out` with feathered masking over foreground article headings, text and content cards. These regions stay mostly dark, allowing text to remain readable while empty background space receives the rainbow. The projector remains fixed above page sections, with opacity automatically reduced rather than hidden when it overlaps a content block. Both canvas and projector visual layers use `pointer-events:none`, do not receive focus, and are `aria-hidden`. No page text or user data is rendered into the canvas.
+
+Technical safeguards: one passive scroll handler, `requestAnimationFrame` scroll easing that terminates, a 1.5 maximum device-pixel ratio, browser reduced-motion and increased-contrast support, zero network requests and no external dependencies. Reduced-motion stops scroll gliding; print removes both visuals. CSP remains local-script only; mobile CSS/JS URLs are versioned to bypass stale caches. Existing portfolio content, certification issuer logos and social links are unchanged.
+
+The old hard-edged SVG RGB bars/framing overlays are hidden and their legacy scroll handler removed. Visual results should be checked on physical Android/Chrome browsers; code checks and browser inspection cannot by themselves guarantee aesthetic appearance on every device.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
