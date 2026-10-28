@@ -28,9 +28,20 @@ The homepage contains a new **AI & Projects** section at \`#ai-lab\`, focused on
 
 Do not publish internal infrastructure endpoints, tokens, client documentation, identifiable field logs, private incident data, manufacturer manuals or proprietary PPM reports. Public project summaries are separate from employer product or vendor endorsements. Update the status date and check each claim against current owner-approved evidence when milestones close.
 
+## Employer and OEM logo identification (October 2026)
+The Career timeline and printable profile display PVR INOX and Qube Cinema employer logos next to the corresponding verified roles. The Credentials section displays the actual Barco and Christie logo images, **not generated certificate seals**. Logo marks are descriptive references to employing/training organizations, not a claim of employer endorsement, official certificate authenticity checking, or partnership.
+
+Logo source inventory:
+- **PVR INOX:** https://commons.wikimedia.org/wiki/File:PVR_INOX_Logo_After_Merger.png (public-domain simple wordmark, trademarked; hosted at `upload.wikimedia.org`)
+- **Qube Cinema:** the company’s own logo at https://www.qubecinema.com/sites/default/files/u76/qube_logo_new.png (trademarked)
+- **Barco:** existing in-repository `BARCO_logo.png` (local asset; retain original color/proportions)
+- **Christie:** existing in-repository `Christie-Logo.JPG` (local asset with ®; retain original color/proportions)
+
+External employer images load from two explicitly allowlisted HTTPS origins in the image-only CSP policy; no external scripts, analytics or styles are allowed. Image requests can disclose visitors' IP addresses to the source image hosts, even with `referrerpolicy="no-referrer"`. For stronger privacy and offline resilience, replace external references with owner-authorized locally hosted brand assets if those become available; verify permissions and brand rules. Barco and Christie publish strict logo-use guidelines, which should be respected in public presentation. Logos are never described as digitally verified certificates.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
-- Locally served stylesheet, favicon, photo, JS. Fonts use operating system fonts.
+- Locally served stylesheet, favicon, portrait, JavaScript and the existing Barco/Christie logo files. Two externally hosted employer-logo images are limited to allowlisted HTTPS image origins. Fonts use operating system fonts.
 - Dynamic experience is derived from July 2011 using calendar months in Asia/Kolkata on both pages. Since the exact joining day is not documented, the text clearly says approximate; HTML without JavaScript falls back to a timeless “since July 2011”. It updates on page load, visibility return, and hourly for long-open tabs. LinkedIn and GitHub are ordinary outbound links.
 - Public professional summary at \`resume.html\` (print-friendly); existing \`resume.pdf\` is **not linked** until its content is reviewed for currency.
 - Semantically structured headings, responsive layout, skip navigation, keyboard focus, reduced-motion support, explicit text labels and meaningful image alt text.
