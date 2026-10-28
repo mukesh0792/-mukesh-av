@@ -112,6 +112,13 @@ Only phone/compact landscape colour rendering receives a **1.52× RGB beam and t
 
 The homepage bumps CSS, app.js and cinema-ambient.js query versions so mobile caches fetch the new design. Source checks and Canvas2D simulations for 390×844 portrait, 844×390 landscape and 1440×900 desktop verify relative colour strength, projector alpha, auto-mask and idle frame termination. Physical device screenshot review remains useful for aesthetic tuning.
 
+## Stationary bottom-centre projector; RGB-only scroll response (29 October 2026)
+Owner explicitly requires that the digital-cinema projector must **stay stuck at the bottom of the viewport** rather than moving or changing with the page. Only its RGB projection rays, their scroll-responsive brightness/spread at Extended AV Training, and the existing focus-aware light dimmer should vary during scrolling.
+
+V7 makes the upward-facing, bottom-centred projector SVG **fixed-positioned inside its fixed viewport overlay** with invariant CSS transform, size and opacity at each responsive breakpoint. The previous `cinema-ambient.js` logic that inspected text overlap and changed `--projector-alpha` on every scroll frame has been removed entirely. The same SVG screen-CTM lens point is used to anchor RGB beams; its visual position does not depend on scroll progress. The Canvas2D renderer continues using passive scroll and bounded requestAnimationFrame easing, with RGB light as the only changing decorative element.
+
+Portrait mobile retains the compact 50vw/195px projector, upward-pointing lens, low-key visual weight, and the stronger red/green/blue colour settings from V6; responsive landscape/desktop layouts continue unchanged. Decorative layers remain noninteractive, reduced-motion/contrast preferences stay respected, and print still removes projection artwork. CSS/JS cache versions were updated for mobile browsers. Existing career, training, AI projects and social links were not modified.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
