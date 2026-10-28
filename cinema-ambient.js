@@ -3,12 +3,12 @@
   // RGB-only projection from a real SVG lens anchor. No external requests.
   const canvas = document.getElementById('cinema-rainbow-field');
   const ambient = document.querySelector('.projection-ambient');
+  // Projector artwork stays stationary; only this RGB canvas responds to scrolling.
   if (!canvas || !ambient || !canvas.getContext) return;
   const ctx = canvas.getContext('2d', { alpha: true });
   if (!ctx) return;
 
   const scene = document.querySelector('.projection-scene');
-  const projector = document.querySelector('.projection-projector');
   const training = document.getElementById('extended-av-training');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const higherContrast = window.matchMedia('(prefers-contrast: more)');
@@ -190,23 +190,9 @@
     }
     ctx.restore();
 
-    // Projector stays visible rather than disappearing behind dark panels.
-    // Dim moderately when it overlaps a text/card region.
-    if (projector) {
-      const p = projector.getBoundingClientRect();
-      let blocked = false;
-      for (const element of focusBlocks) {
-        const b = element.getBoundingClientRect();
-        const w = Math.min(p.right, b.right) - Math.max(p.left, b.left);
-        const h = Math.min(p.bottom, b.bottom) - Math.max(p.top, b.top);
-        if (w > 26 && h > 24 && w * h > p.width * p.height * .25) {
-          blocked = true;
-          break;
-        }
-      }
-      ambient.style.setProperty('--projector-alpha',
-        mobile ? (blocked ? '.28' : '.48') : (blocked ? '.62' : '.91'));
-    }
+    // Projector location, rotation and brightness are intentionally static.
+    // Scroll updates only the RGB cone, Training wash and focus-area masks.
+
   }
 
   function paintFrame() {
