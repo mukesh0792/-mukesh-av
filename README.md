@@ -10,6 +10,15 @@ To avoid requiring visitors to modify their DNS settings, the main site is hoste
 ## Production site
 https://mukesh0792.github.io/-mukesh-av/
 
+## Verified employment progression
+Professional history is presented as separate roles rather than an undifferentiated Qube appointment:
+- **Engineer**, Qube Cinema Technologies (Real Image), July 2011–June 2015
+- **Senior Engineer**, Qube, July 2015–April 2023
+- **Team Coordinator**, Qube, May 2023–December 2024
+- **Manager – Sound & Projection**, PVR INOX Rajasthan, 26 December 2024–present
+
+Promotion months and role titles confirmed by the portfolio owner on 28 October 2026. Month-end boundaries between promotions are inferred from successive promotion dates; exact days of the Qube role changes and resignation are not asserted. The dynamic experience counter remains anchored to July 2011.
+
 ## Public AI Learning & Projects content (October 2026 snapshot)
 The homepage contains a new **AI & Projects** section at \`#ai-lab\`, focused on applied AI engineering rather than general-purpose AI marketing.
 
