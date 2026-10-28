@@ -2,11 +2,13 @@
 
 Original, responsive professional portfolio site for Mukesh Kumar. Hosted on GitHub Pages.
 
-## Domain status
-The account's **active** free subdomain is `mukeshkumar.work.gd` (confirmed in the owner's DNSExit screenshot on 28 Oct 2026). This name is distinct from the previously mistaken `mukeshav.work.gd`. The site changes in this PR remain staged until DNSExit A records have been saved and independently verified. DNSExit needs four GitHub Pages IPv4 A addresses and may take time to propagate. Validate HTTPS before directing visitors to the custom domain. DNSExit free-service attribution is included in the footer.
+## Custom-domain reliability hold
+The DNSExit free subdomain `mukeshkumar.work.gd` is registered and returns four correct GitHub Pages A records on Google Public DNS, but visitors on regular mobile-carrier DNS encountered NXDOMAIN. The owner confirmed the same website opens when Android Private DNS is changed to `dns.google`. This strongly implicates carrier-side DNS resolution/cache/filtering, but the exact cause is not yet proven.
+
+To avoid requiring visitors to modify their DNS settings, the main site is hosted at the standard GitHub Pages project URL. Do not re-add the custom-domain `CNAME` file until the hostname is confirmed accessible on ordinary mobile networks and Wi-Fi without DNS changes. Keep DNSExit account and DNS records intact; no mailbox should be advertised until mail delivery is verified.
 
 ## Production site
-https://mukeshkumar.work.gd/
+https://mukesh0792.github.io/-mukesh-av/
 
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
