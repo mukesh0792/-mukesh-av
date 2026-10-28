@@ -234,3 +234,32 @@
   .credential--branded .issuer-stamp,
   .profile-brand-row .issuer-stamp{width:76px;max-width:76px}
 }
+
+
+/* Official Q-SYS and Lightware logo artwork: clear, neutral image canvas. */
+.training-mark--qsys,
+.training-mark--lightware{
+  background:#fff;
+  border-color:#d7e1e7;
+  color:#152430;
+}
+.training-mark--qsys img,
+.training-mark--lightware img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:34px;
+  object-fit:contain;
+}
+@media screen and (max-width:650px){
+  .training-mark--qsys img,
+  .training-mark--lightware img{max-height:26px}
+  .profile-additional-training .training-mark--qsys img,
+  .profile-additional-training .training-mark--lightware img{max-height:29px}
+}
+@media print{
+  .training-mark--qsys,
+  .training-mark--lightware{background:#fff!important;border-color:#ccc}
+  .training-mark--qsys img,
+  .training-mark--lightware img{max-height:24px}
+}
