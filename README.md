@@ -7,7 +7,8 @@ https://mukesh0792.github.io/-mukesh-av/
 
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
-- Locally served stylesheet, favicon, photo, JS. Fonts use operating system fonts. LinkedIn and GitHub are ordinary outbound links.
+- Locally served stylesheet, favicon, photo, JS. Fonts use operating system fonts.
+- Dynamic experience is derived from July 2011 using calendar months in Asia/Kolkata on both pages. Since the exact joining day is not documented, the text clearly says approximate; HTML without JavaScript falls back to a timeless “since July 2011”. It updates on page load, visibility return, and hourly for long-open tabs. LinkedIn and GitHub are ordinary outbound links.
 - Public professional summary at \`resume.html\` (print-friendly); existing \`resume.pdf\` is **not linked** until its content is reviewed for currency.
 - Semantically structured headings, responsive layout, skip navigation, keyboard focus, reduced-motion support, explicit text labels and meaningful image alt text.
 
