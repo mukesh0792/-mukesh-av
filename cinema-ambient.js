@@ -3,7 +3,7 @@
   // RGB-only projection from a real SVG lens anchor. No external requests.
   const canvas = document.getElementById('cinema-rainbow-field');
   const ambient = document.querySelector('.projection-ambient');
-  // Projector artwork stays stationary; only this RGB canvas responds to scrolling.
+  // Projector artwork belongs only to Contact; the RGB canvas is page-wide.
   if (!canvas || !ambient || !canvas.getContext) return;
   const ctx = canvas.getContext('2d', { alpha: true });
   if (!ctx) return;
@@ -42,9 +42,23 @@
   }
 
   function lensPoint() {
-    // Map the real SVG lens coordinate through the rotated SVG's screen
-    // transform. Bounding-box fractions were valid only before rotation.
-    if (!scene) return { x: width * .50, y: height * .69 };
+    // RGB continues throughout the page, but the *physical* projector is
+    // visible only inside Contact. Elsewhere, use an unobtrusive virtual
+    // bottom-centre source rather than projecting from an offscreen SVG.
+    const virtual = { x: width * .50, y: height * .90 };
+    if (!scene || typeof scene.getBoundingClientRect !== 'function') {
+      return virtual;
+    }
+    const bounds = scene.getBoundingClientRect();
+    const visibleHeight = Math.max(0,
+      Math.min(height, bounds.bottom) - Math.max(0, bounds.top));
+    const blend = clamp(visibleHeight / Math.min(90, Math.max(1, bounds.height * .70)), 0, 1);
+    if (blend <= 0) return virtual;
+
+    let real = {
+      x: bounds.left + bounds.width * .50,
+      y: bounds.top + bounds.height * .15
+    };
     if (typeof scene.createSVGPoint === 'function' &&
         typeof scene.getScreenCTM === 'function') {
       const ctm = scene.getScreenCTM();
@@ -52,15 +66,16 @@
         const anchor = scene.createSVGPoint();
         anchor.x = 876;
         anchor.y = 456;
-        const screenPoint = anchor.matrixTransform(ctm);
-        if (Number.isFinite(screenPoint.x) && Number.isFinite(screenPoint.y)) {
-          return { x: screenPoint.x, y: screenPoint.y };
+        const mapped = anchor.matrixTransform(ctm);
+        if (Number.isFinite(mapped.x) && Number.isFinite(mapped.y)) {
+          real = { x: mapped.x, y: mapped.y };
         }
       }
     }
-    const box = scene.getBoundingClientRect();
-    // Fallback for engines without SVGPoint: rotated housing top-centre.
-    return { x: box.left + box.width * .50, y: box.top + box.height * .13 };
+    return {
+      x: virtual.x + (real.x - virtual.x) * blend,
+      y: virtual.y + (real.y - virtual.y) * blend
+    };
   }
 
   function softHalo(x, y, rx, ry, colour, alpha) {
