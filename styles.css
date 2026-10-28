@@ -635,3 +635,79 @@
 @media print{
   .projection-ambient,.cinema-rainbow-field{display:none!important}
 }
+
+
+/* V8: the projector is part of "Let's build what's next", not a sticky
+   site-wide overlay. Its natural document flow keeps it off other sections. */
+.contact-section .projection-ambient{
+  position:relative!important;
+  inset:auto!important;
+  display:block;
+  width:100%!important;
+  height:clamp(170px,20vw,235px)!important;
+  margin:30px auto 0;
+  padding:0;
+  z-index:0;
+  overflow:visible;
+  transform:none!important;
+  opacity:.70;
+  mix-blend-mode:screen;
+  clip-path:none!important;
+  contain:layout style;
+  pointer-events:none;
+  user-select:none;
+}
+.contact-section .projection-scene{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:clamp(160px,18vw,225px)!important;
+  height:auto;
+  transform:translate(-50%,-50%) rotate(90deg)!important;
+  transform-origin:center center!important;
+  animation:none!important;
+  transition:none!important;
+  will-change:auto;
+  filter:drop-shadow(0 0 7px rgba(84,158,191,.06));
+}
+.contact-section .projection-projector{
+  opacity:.66!important;
+  transition:none!important;
+}
+@media screen and (max-width:700px) and (orientation:portrait){
+  .contact-section .projection-ambient{
+    height:170px!important;
+    margin-top:18px;
+    opacity:.62;
+  }
+  .contact-section .projection-scene{
+    width:min(43vw,152px)!important;
+    top:50%!important;
+    bottom:auto!important;
+    transform:translate(-50%,-50%) rotate(90deg)!important;
+  }
+  .contact-section .projection-projector{opacity:.49!important}
+}
+@media screen and (max-width:900px) and (orientation:landscape){
+  .contact-section .projection-ambient{
+    height:165px!important;
+    margin-top:14px;
+    opacity:.60;
+  }
+  .contact-section .projection-scene{
+    width:min(23vw,162px)!important;
+    top:50%!important;
+    bottom:auto!important;
+    transform:translate(-50%,-50%) rotate(90deg)!important;
+  }
+  .contact-section .projection-projector{opacity:.47!important}
+}
+@media (prefers-contrast:more){
+  .contact-section .projection-ambient{opacity:.48}
+}
+@media print{
+  .contact-section .projection-ambient,
+  .cinema-rainbow-field{display:none!important}
+}
