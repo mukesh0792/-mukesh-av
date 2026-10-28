@@ -96,6 +96,15 @@ Following owner feedback, the cinematic background now uses **only three saturat
 
 **QA:** Static checks and mocked Canvas2D scroll tests cover portrait (390×844), mobile landscape (844×390), and desktop (1440×900), including three RGB channels, full-screen spread and termination at rest. Device-specific visual balance still benefits from real handset review.
 
+## Upward-facing RGB lens and non-narrowing full-width fan (28 October 2026)
+Owner visual correction: the bottom-centre projector should physically face the **upward direction of its RGB light**. When scrolling upwards from Extended AV Training, the RGB beam must **not** contract into narrow bands; light should originate at the lens and spread across the screen from left to right all the way to the top.
+
+- Rotate the generic projector SVG illustration clockwise by 90° using CSS, placing its former left-facing optical front at the **top**. Its body remains bottom-centre on portrait mobile, landscape phone and desktop; bottom offsets account for the rotated bounding footprint.
+- Use `SVGSVGElement.getScreenCTM()` to map the real SVG lens coordinate `(876,456)` to viewport pixels **after CSS rotation**; use a safe top-centre fallback in engines lacking SVGPoint. This avoids beams emerging from the wrong part of the illustration.
+- Replace variable-width Bézier strokes with **three feathered RGB cone-shaped fills**. All three channels share the lens origin; together their top boundaries reach past both left and right screen edges. **Cone geometry never depends on scroll position or training trigger**, so scrolling upward cannot narrow it.
+- Extended AV Training still triggers enhanced red/green/blue halo illumination across the full viewport; scrolling upwards reduces only the halo's richness, not the RGB cone's width.
+- Preserve text/card auto-dimming, noninteractive `aria-hidden` layers, user motion/contrast preferences, existing portfolio and printable resume. All assets use versioned URLs to avoid stale mobile JS/CSS.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.

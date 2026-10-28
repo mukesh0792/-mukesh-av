@@ -42,13 +42,25 @@
   }
 
   function lensPoint() {
-    if (!scene) return { x: width * .25, y: height * .78 };
+    // Map the real SVG lens coordinate through the rotated SVG's screen
+    // transform. Bounding-box fractions were valid only before rotation.
+    if (!scene) return { x: width * .50, y: height * .69 };
+    if (typeof scene.createSVGPoint === 'function' &&
+        typeof scene.getScreenCTM === 'function') {
+      const ctm = scene.getScreenCTM();
+      if (ctm) {
+        const anchor = scene.createSVGPoint();
+        anchor.x = 876;
+        anchor.y = 456;
+        const screenPoint = anchor.matrixTransform(ctm);
+        if (Number.isFinite(screenPoint.x) && Number.isFinite(screenPoint.y)) {
+          return { x: screenPoint.x, y: screenPoint.y };
+        }
+      }
+    }
     const box = scene.getBoundingClientRect();
-    // Scene's cropped viewBox is "835 320 365 270"; lens at (876,456).
-    return {
-      x: box.left + box.width * (41 / 365),
-      y: box.top + box.height * (136 / 270)
-    };
+    // Fallback for engines without SVGPoint: rotated housing top-centre.
+    return { x: box.left + box.width * .50, y: box.top + box.height * .13 };
   }
 
   function softHalo(x, y, rx, ry, colour, alpha) {
@@ -72,8 +84,9 @@
     wantedScroll = y / Math.max(1, height);
     if (training) {
       const top = training.getBoundingClientRect().top;
-      // Open from focused RGB to full-viewport RGB while training enters.
-      // Stays full-screen below this section and reverses on scrolling up.
+      // Training triggers a *richer* whole-screen wash; the RGB cone
+      // already covers left-to-right at the top on every section.
+      // Scrolling up can lower the wash, but NEVER narrow the beam fan.
       wantedSpread = clamp((height * .85 - top) / (height * .65), 0, 1);
     } else {
       wantedSpread = 0;
@@ -103,40 +116,46 @@
     softHalo(point.x, point.y, width * .48, height * .34,
       [166, 225, 241], .06 * contrast);
 
-    // Red, green and blue light rays travel *from the projector lens*.
-    // Their endpoints gradually widen to cover the entire screen from the
-    // Extended AV Training scroll trigger, with curved feathered edges.
+    // Projector is aimed upward: RGB light fans out from the actual lens.
+    // All sections use the SAME full-width top edge, so reverse scrolling
+    // never narrows the cone. Extended AV Training only boosts the wash.
     ctx.save();
-    ctx.lineCap = 'round';
-    ctx.filter = 'blur(' + Math.round(clamp(width * .045, 15, 27)) + 'px)';
-    const beamWidth = clamp(width * (.105 + .34 * spread), 32, 280);
-    for (let i = 0; i < rgb.length; i += 1) {
-      const narrow = [.08, .26, .44][i];
-      const wide = [.09, .50, .91][i];
-      const destX = width * (narrow + (wide - narrow) * spread) + drift;
-      const destY = height * (.13 + .06 * i) + wave * .6;
-      const gradient = ctx.createLinearGradient(
-        point.x, point.y, destX, destY
-      );
-      gradient.addColorStop(0, rgba(rgb[i], .015 * contrast));
-      gradient.addColorStop(.25, rgba(rgb[i], .10 * contrast));
-      gradient.addColorStop(.68, rgba(rgb[i], (.29 + .07 * spread) * contrast));
-      gradient.addColorStop(1, rgba(rgb[i], (.22 + .10 * spread) * contrast));
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = beamWidth;
+    ctx.filter = 'blur(' + Math.round(clamp(width * .043, 14, 25)) + 'px)';
+    const boost = .83 + .17 * spread;
+    const top = -height * .13;
+    const outerEdges = [
+      [-.15, .41], [.23, .77], [.59, 1.15]
+    ];
+    for (let i = 0; i < 3; i += 1) {
+      const left = width * outerEdges[i][0] + drift * .20;
+      const right = width * outerEdges[i][1] + drift * .20;
+      const mid = (left + right) * .5;
+      const gradient = ctx.createLinearGradient(point.x, point.y, mid, top);
+      gradient.addColorStop(0, rgba(rgb[i], .03 * contrast));
+      gradient.addColorStop(.27, rgba(rgb[i], .14 * boost * contrast));
+      gradient.addColorStop(.69, rgba(rgb[i], .29 * boost * contrast));
+      gradient.addColorStop(1, rgba(rgb[i], .23 * boost * contrast));
+      ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.moveTo(point.x, point.y);
       ctx.bezierCurveTo(
-        point.x * .82 + width * .025, point.y - height * .28,
-        destX * .82 + point.x * .18, destY + height * .11,
-        destX, destY
+        point.x - width * .085, point.y - height * .31,
+        left, height * .31 + wave * .22,
+        left, top
       );
-      ctx.stroke();
+      ctx.lineTo(right, top);
+      ctx.bezierCurveTo(
+        right, height * .31 + wave * .22,
+        point.x + width * .085, point.y - height * .31,
+        point.x, point.y
+      );
+      ctx.closePath();
+      ctx.fill();
     }
     ctx.restore();
 
-    // From Extended AV Training onward, blend rich RGB ambient wash across
-    // 100% of the viewport, not just a band near the projector.
+    // At Extended AV Training add richer RGB halos across the FULL viewport
+    // up to the top edge. The fan geometry stays fully wide above training.
     if (spread > .001) {
       const positions = [.10, .50, .90];
       for (let i = 0; i < 3; i += 1) {
@@ -148,8 +167,8 @@
           rgb[i], (.21 * spread) * contrast
         );
       }
-      softHalo(width * .52, height * .50, width * .76,
-        height * .73, [150, 179, 226], .042 * spread * contrast);
+      // RGB-only illumination; no fourth mixed-color light source.
+      // Overlapping three channels naturally creates mixed hues.
     }
 
     // Cinema-style auto-dimmer: feather out the RGB light over actual
