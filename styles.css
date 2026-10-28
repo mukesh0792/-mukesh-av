@@ -552,3 +552,43 @@
 @media print{
   .projection-ambient,.cinema-rainbow-field{display:none!important}
 }
+
+
+/* V6 mobile balance: RGB should lead; projector is a subtle lens cue.
+   Keep the upright lens orientation and the permanent full-width RGB fan. */
+@media screen and (max-width:700px) and (orientation:portrait){
+  .projection-ambient{
+    opacity:.63;
+    clip-path:inset(72px 0 0 0);
+  }
+  .projection-scene{
+    width:min(50vw,195px)!important;
+    bottom:clamp(26px,5vh,52px)!important;
+    filter:drop-shadow(0 0 7px rgba(84,158,191,.07));
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+  .projection-optical-glow{opacity:.38}
+}
+@media screen and (min-width:701px) and (max-width:900px) and (orientation:landscape){
+  .projection-ambient{opacity:.67}
+  .projection-scene{
+    width:clamp(125px,19vw,175px)!important;
+    bottom:clamp(19px,6vh,38px)!important;
+    filter:drop-shadow(0 0 7px rgba(84,158,191,.07));
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+  .projection-optical-glow{opacity:.42}
+}
+@media screen and (max-width:700px) and (orientation:landscape){
+  .projection-ambient{opacity:.64}
+  .projection-scene{
+    width:clamp(116px,20vw,166px)!important;
+    bottom:clamp(16px,5vh,32px)!important;
+    filter:drop-shadow(0 0 6px rgba(84,158,191,.06));
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+}
+@media (prefers-contrast:more) and (max-width:900px){
+  .projection-ambient{opacity:.50}
+}
+@media print{.projection-ambient,.cinema-rainbow-field{display:none!important}}

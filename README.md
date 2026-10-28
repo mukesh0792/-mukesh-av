@@ -105,6 +105,13 @@ Owner visual correction: the bottom-centre projector should physically face the 
 - Extended AV Training still triggers enhanced red/green/blue halo illumination across the full viewport; scrolling upwards reduces only the halo's richness, not the RGB cone's width.
 - Preserve text/card auto-dimming, noninteractive `aria-hidden` layers, user motion/contrast preferences, existing portfolio and printable resume. All assets use versioned URLs to avoid stale mobile JS/CSS.
 
+## Mobile RGB emphasis and smaller projector (28 October 2026)
+Owner phone feedback: projector hardware appeared oversized and drew attention away from the RGB light. To restore balance, on phone portrait the upward-facing bottom-centre projector is reduced from roughly 79vw (up to 320px) to **50vw (max 195px)**; landscape phone widths are capped at about **175px** or less, depending on viewport. Housing opacity and decorative shadow are lowered, but the lens remains physically upward-facing.
+
+Only phone/compact landscape colour rendering receives a **1.52× RGB beam and training-halo alpha boost** (bounded below 1.0). Desktop RGB strength remains unchanged. The three-channel full-width cone, Extended AV Training brightness ramp, focus-aware automatic dimming, reduced-motion and high-contrast support continue unchanged. The user's original profile, career, logos and all social links are untouched; printable profile remains effect-free.
+
+The homepage bumps CSS, app.js and cinema-ambient.js query versions so mobile caches fetch the new design. Source checks and Canvas2D simulations for 390×844 portrait, 844×390 landscape and 1440×900 desktop verify relative colour strength, projector alpha, auto-mask and idle frame termination. Physical device screenshot review remains useful for aesthetic tuning.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
