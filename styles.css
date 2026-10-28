@@ -378,3 +378,73 @@
   .projection-ambient{opacity:.50}
 }
 @media print{.projection-ambient{display:none!important}}
+
+
+/* V3: soft, continuous rainbow light with foreground-aware dimming.
+   The old fixed phase RGB bars and guide rectangles are deliberately retired. */
+.projection-rays,
+.projection-color-bars,
+.projection-framing{display:none!important}
+.projection-ambient{
+  position:fixed;
+  inset:0;
+  z-index:4;
+  opacity:.81;
+  mix-blend-mode:screen;
+  clip-path:inset(86px 0 0 0);
+  pointer-events:none;
+}
+.projection-scene{
+  right:-2vw;
+  bottom:4vh;
+  transform:none!important;
+  will-change:auto;
+}
+.projection-projector{
+  opacity:var(--projector-alpha,.56)!important;
+  transition:opacity .65s ease;
+}
+.projection-optical-glow{opacity:.55}
+.cinema-rainbow-field{
+  position:fixed;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+  user-select:none;
+  mix-blend-mode:screen;
+  clip-path:inset(86px 0 0 0);
+  opacity:1;
+}
+@media screen and (max-width:700px){
+  .projection-ambient{
+    inset:0;
+    z-index:4;
+    top:0;
+    opacity:.75;
+    clip-path:inset(72px 0 0 0);
+  }
+  .projection-scene{
+    width:125vw;
+    right:-3vw;
+    bottom:6vh;
+    transform:none!important;
+  }
+  .cinema-rainbow-field{clip-path:inset(72px 0 0 0)}
+}
+@media screen and (max-width:400px){
+  .projection-ambient{opacity:.73}
+  .projection-scene{width:130vw;right:-4vw;bottom:8vh}
+}
+@media (prefers-contrast:more){
+  .cinema-rainbow-field{opacity:.60}
+  .projection-ambient{opacity:.65}
+}
+@media (prefers-reduced-motion:reduce){
+  .projection-projector{transition:none}
+}
+@media print{
+  .projection-ambient,.cinema-rainbow-field{display:none!important}
+}
