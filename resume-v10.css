@@ -1,0 +1,130 @@
+/* V10 standalone resumes — modern screen presentation, single-column ATS-friendly print.
+   No external fonts, trackers, icon libraries or embedded portraits. */
+:root{--navy:#0c1a26;--navy2:#142839;--cyan:#9bd5dd;--ink:#172b39;--muted:#4d6271;--line:#d5e1e7;--paper:#fff;--soft:#f4f8fa;--accent:#146275}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0b1721;color:#e8f2f5;font:15px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:3px solid #88d7e2;outline-offset:4px}
+.skip{position:absolute;left:10px;top:-70px;background:#d2f9f4;color:#08212a;padding:10px 13px;z-index:100}
+.skip:focus{top:9px}
+.resume-sitebar{background:rgba(11,23,33,.97);border-bottom:1px solid rgba(171,206,220,.23)}
+.resume-sitebar-inner{width:min(calc(100% - 36px),1120px);margin:auto;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.resume-brand{font-size:13px;text-decoration:none;font-weight:840;letter-spacing:.07em;color:#f1faff}
+.resume-brand strong{color:#a6e5ea}
+.resume-site-nav{display:flex;align-items:center;flex-wrap:wrap;gap:15px}
+.resume-site-nav a{font-size:12px;text-decoration:none;color:#b4cbd5;font-weight:670}
+.resume-site-nav a[aria-current="page"]{color:#d5fbff}
+.resume-site-nav a:hover{color:#d5fbff}
+.resume-shell{width:min(calc(100% - 32px),1140px);margin:37px auto 50px}
+.resume-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+.resume-toolbar p{margin:0;font-size:12px;letter-spacing:.08em;font-weight:750;color:#98c3ce}
+.resume-toolbar-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.resume-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 15px;border-radius:7px;border:1px solid rgba(175,212,223,.38);background:#152d3b;color:#e5f5f8;font-size:12px;font-weight:780;text-decoration:none;cursor:pointer}
+.resume-btn:hover{background:#204052}
+.resume-btn-primary{background:#aee7e6;color:#092530;border-color:transparent}
+.resume-btn-primary:hover{background:#d5f8f4}
+.resume-paper{width:min(100%,860px);margin:auto;background:var(--paper);color:var(--ink);border-radius:10px;box-shadow:0 24px 90px rgba(0,0,0,.29);padding:48px clamp(25px,5vw,66px) 53px}
+.resume-paper a{color:#15596f;text-decoration:underline;text-underline-offset:2px}
+.resume-flag{font-size:10px;letter-spacing:.16em;color:#357183;font-weight:850;text-transform:uppercase;margin:0 0 9px}
+.resume-person{font-size:clamp(29px,4vw,43px);letter-spacing:-.052em;line-height:1.08;font-weight:830;margin:0}
+.resume-role{font-size:15px;color:#23556a;font-weight:750;margin:11px 0 13px;line-height:1.4}
+.resume-contactline{font-size:11.5px;color:#425968;margin:0 0 7px;line-height:1.6;overflow-wrap:anywhere}
+.resume-contactline span.sep{padding-inline:7px;color:#90a1ac}
+.resume-note{font-size:10px;color:#5e7080;margin:8px 0 0}
+.resume-rule{height:3px;background:linear-gradient(90deg,#195f73,#7cb9c4 52%,#e3eef2 92%);margin:20px 0 22px}
+.cv-section{margin-top:23px}
+.cv-section h2{margin:0 0 11px;color:#183f50;font-size:12.5px;letter-spacing:.11em;font-weight:850;text-transform:uppercase;line-height:1.3}
+.cv-section p{margin:0 0 9px;color:#314756;font-size:12.5px;line-height:1.56}
+.cv-section ul{margin:8px 0 0;padding-left:20px}
+.cv-section li{font-size:12.2px;line-height:1.53;margin:0 0 7px;color:#304858}
+.cv-section li::marker{color:#26748a}
+.cv-tags{display:flex;gap:7px;flex-wrap:wrap}
+.cv-tags span{background:#eef6f7;border:1px solid #d6e8ea;border-radius:5px;color:#1c4e5d;padding:4px 8px;font-size:11px;font-weight:660}
+.cv-job{padding:0 0 12px;margin:0 0 15px;border-bottom:1px solid #e0e9ec;break-inside:avoid;page-break-inside:avoid}
+.cv-job:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.cv-job-head{display:flex;justify-content:space-between;gap:15px;align-items:baseline}
+.cv-job h3{font-size:14.2px;letter-spacing:-.015em;color:#1a3645;margin:0}
+.cv-dates{font-size:11px;white-space:nowrap;color:#4a6978;font-weight:790}
+.cv-employer{font-weight:730;font-size:11.8px!important;color:#42687a!important;margin:4px 0 5px!important}
+.cv-job ul{margin-top:8px}
+.cv-pair{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.cv-pair p{font-size:12px}
+.cv-cert-list{margin:0;padding-left:20px}
+.cv-cert-list li{margin-bottom:5px}
+.cv-subheading{font-weight:810;color:#234a5c!important}
+.cv-project{margin-bottom:12px}
+.cv-project strong{font-size:12.5px;color:#1e4557}
+.cv-small{font-size:11px!important;color:#586b78!important}
+.cv-education{font-size:12px}
+.cv-footnote{margin-top:22px;border-top:1px solid var(--line);padding-top:10px;color:#68808a;font-size:10px}
+.resume-picker{width:min(calc(100% - 36px),1100px);margin:0 auto 70px}
+.picker-hero{padding:62px 0 44px;max-width:840px}
+.picker-eyebrow{color:#9edbe4;text-transform:uppercase;letter-spacing:.17em;font-size:11px;font-weight:820;margin:0 0 17px}
+.picker-hero h1{font-size:clamp(36px,5.3vw,66px);font-weight:820;line-height:1.11;letter-spacing:-.052em;margin:0 0 17px}
+.picker-hero h1 em{font-style:normal;color:#b5eced}
+.picker-hero>p:last-child{color:#b9cfd7;max-width:690px;font-size:16px;margin:0}
+.picker-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.picker-card{border:1px solid rgba(170,211,223,.30);background:linear-gradient(150deg,#18313f,#112532);border-radius:12px;padding:30px;min-height:325px;display:flex;flex-direction:column;gap:14px}
+.picker-card:nth-child(2){background:linear-gradient(150deg,#193244,#142b3c)}
+.picker-label{color:#98dfe4;font-size:11px;letter-spacing:.14em;font-weight:820}
+.picker-card h2{font-size:clamp(24px,3vw,35px);letter-spacing:-.03em;line-height:1.17;margin:0}
+.picker-card p{font-size:14px;color:#b9d1d8;margin:0;line-height:1.68}
+.picker-features{font-size:12px;color:#d5e8ed;line-height:1.8}
+.picker-card .resume-btn{align-self:flex-start;margin-top:auto}
+.picker-guide{margin-top:32px;border-top:1px solid rgba(170,211,223,.25);padding-top:24px;max-width:850px}
+.picker-guide h2{font-size:18px;margin:0 0 9px}
+.picker-guide p{font-size:13px;color:#acc7d2;margin:0 0 12px}
+.picker-guide strong{color:#ddf4f7}
+.resume-footer{text-align:center;color:#93abb6;font-size:11px;padding:0 16px 30px}
+@media(max-width:700px){
+ .resume-sitebar-inner{min-height:64px}
+ .resume-brand{font-size:11px}
+ .resume-site-nav{gap:9px}
+ .resume-site-nav a{font-size:11px}
+ .resume-shell{margin-top:18px;width:min(calc(100% - 18px),1140px)}
+ .resume-toolbar{padding-inline:8px}
+ .resume-paper{padding:28px 21px 32px;border-radius:8px}
+ .resume-person{font-size:32px}
+ .resume-role{font-size:13px}
+ .cv-job-head{display:block}
+ .cv-dates{display:block;margin-top:2px}
+ .cv-section{margin-top:20px}
+ .cv-pair{grid-template-columns:1fr;gap:4px}
+ .picker-hero{padding:44px 0 32px}
+ .picker-grid{grid-template-columns:1fr}
+ .picker-card{min-height:290px;padding:24px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+ @page{size:A4;margin:13mm 13mm 14mm}
+ html,body{background:#fff!important;color:#111!important}
+ body{font:9.4pt/1.38 Arial,Helvetica,sans-serif!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .skip,.resume-sitebar,.resume-toolbar,.resume-footer,.picker-hero,.picker-grid,.picker-guide{display:none!important}
+ .resume-shell{width:100%;max-width:none;margin:0}
+ .resume-paper{width:100%;max-width:none;box-shadow:none;border-radius:0;padding:0;margin:0}
+ .resume-person{font-size:23pt;color:#111}
+ .resume-role{font-size:11.2pt;color:#253d49;margin:6pt 0}
+ .resume-contactline{font-size:8.7pt;color:#333;margin-bottom:3pt}
+ .resume-contactline a{color:#111!important;text-decoration:none}
+ .resume-rule{background:#365c69!important;height:1.3pt;margin:10pt 0 12pt}
+ .resume-flag{font-size:7.5pt;color:#444}
+ .cv-section{margin-top:12.5pt}
+ .cv-section h2{font-size:9.2pt;color:#1b3b48;margin-bottom:6pt;break-after:avoid;page-break-after:avoid}
+ .cv-section p{font-size:9pt;line-height:1.38;margin-bottom:5pt;color:#222}
+ .cv-section li{font-size:8.8pt;line-height:1.35;margin:0 0 4pt;color:#222}
+ .cv-job{padding-bottom:7pt;margin-bottom:8pt}
+ .cv-job h3{font-size:10pt;color:#111}
+ .cv-dates{font-size:8.1pt}
+ .cv-employer{font-size:8.6pt!important;color:#333!important}
+ .cv-tags{gap:4pt}
+ .cv-tags span{border:1px solid #ccc;background:#fff;padding:2pt 5pt;font-size:7.9pt;color:#222}
+ .cv-pair{gap:10pt}
+ .cv-small{font-size:8.5pt!important;color:#333!important}
+ .cv-footnote{font-size:7.4pt;color:#555}
+ .cv-section,.cv-project{break-inside:auto}
+ .cv-job,.cv-project{break-inside:avoid;page-break-inside:avoid}
+ .cv-section h2{orphans:3;widows:3}
+ a[href]::after{content:none!important}
+}
