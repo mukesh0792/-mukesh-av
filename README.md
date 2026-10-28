@@ -1,65 +1,39 @@
-# Mukesh Kumar - Professional AV & Digital Cinema Projection Engineer Website
+# Mukesh Kumar — Digital Cinema & AV Engineering Portfolio
 
-A state-of-the-art, dark-themed portfolio and technical engineering showcase built for **Mukesh Kumar** (Senior AV & Cinema Projection Engineer, Sound & Projection Manager).
+Original, responsive professional portfolio site for Mukesh Kumar. Hosted on GitHub Pages.
 
----
+## Production site
+https://mukesh0792.github.io/-mukesh-av/
 
-## 🌟 Key Features & Highlights
+## Architecture
+- Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
+- Locally served stylesheet, favicon, photo, JS. Fonts use operating system fonts. LinkedIn and GitHub are ordinary outbound links.
+- Public professional summary at \`resume.html\` (print-friendly); existing \`resume.pdf\` is **not linked** until its content is reviewed for currency.
+- Semantically structured headings, responsive layout, skip navigation, keyboard focus, reduced-motion support, explicit text labels and meaningful image alt text.
 
-- **Authentic Engineering Profile**: Features real-world data from 14+ years of experience across **PVR INOX Limited** (80+ screens, 99%+ uptime) and **Qube Cinema Technologies** (13+ years of installations & laser retrofits).
-- **OEM Projector & Laser Systems**: Covers certified expertise across **Barco (Series 2 & 4, LLU, Level 2 Diagnostics)**, **Christie (RealLaser, CineLife, Series I & II)**, and **NEC (NC1202/1402)**.
-- **Interactive DCI Cinema Screen & Lumens Calculator**: Computes required ANSI lumens, surface area, and recommended OEM projector models using SMPTE DCI 14.0 fL (2D) and 4.5 fL (3D) standards.
-- **Interactive DCI Signal Flow Simulator**: Deep interactive exploration of the 5-stage cinema signal path (Ingest & KDM -> IMB Decryption -> 3-Chip DLP Optics -> Dante/Q-SYS Audio DSP -> Amplification & B-Chain).
-- **Web Audio API Acoustic Tone Studio**: Real-time calibration tone generator (1 kHz Reference Sine, 40 Hz Subwoofer LFE resonance, and Pink Noise for RTA acoustic room tuning) with a live canvas visualizer.
-- **Verified OEM Certifications Matrix**: Filterable & searchable credentials grid covering Dante Level 1, Q-SYS Cinema 101, Lightware AV-over-IP, Barco Level 2 Diagnostics, Christie, NEC, and computer networking.
-- **Direct Contact & Print-to-PDF**: Direct copy buttons for email/phone, responsive contact form, and dedicated print stylesheet for clean one-click PDF portfolio export.
+## Security review
+- Document-level Content Security Policy (CSP) restricts scripts, images, CSS, forms, framing, third-party fetches, embedded objects and base URLs.
+- IMPORTANT: Meta CSP is not equivalent to **HTTP response security headers**. GitHub Pages does not permit custom response headers for project Pages. Directives such as \`frame-ancestors\` and \`sandbox\` **cannot be enforced through HTML meta CSP**; to enforce headers use a reverse proxy/CDN with header support, then verify browser response headers.
+- Untrusted user data is never rendered into HTML; minimal JS only sets year, copies a fixed public contact email and closes the mobile menu.
+- Contact button invokes the visitor's email client; this is intentionally **not represented as a server-side enquiry form**. There is no outbound API collection.
+- No API keys, credentials or production/internal operational logs should be committed. Avoid uploading confidential site photos, identifiable equipment serial numbers or sensitive documents.
+- Static site cannot guarantee protection against hosting-account compromise; secure GitHub account with 2FA/passkeys, restrict repo writers, protect \`main\` and review dependencies/changes.
+- Existing legacy assets (including the old PDF and optional OEM logos) remain in repository history; audit and remove or replace when appropriate. Deleting from HEAD does not erase Git history.
 
----
+## Design references (principles, not copies)
+- Brittany Chiang: readable engineering experience and project hierarchy (https://brittanychiang.com)
+- Lee Robinson: concise professional identity and focused information architecture (https://leerob.com)
+- Industrial design concept: impactful headline, disciplined engineering visual tone (Dribbble shot 27070066)
+- Architecture/editorial portfolios: numbered project descriptions and generous spacing
 
-## 🚀 How to Run Locally
+All HTML/CSS/JS code is original, not copied from these references.
 
-You can open `index.html` directly in any web browser, or serve it using Python or Node:
+## Update guidance
+1. Create a branch and open a PR rather than editing \`main\` directly.
+2. Validate that all local links and resources load from the GitHub Pages **project base path** \`/-mukesh-av/\`.
+3. Verify desktop, mobile, browser console, keyboard navigation, printing, meta CSP and link opening.
+4. Never invent quantitative performance claims, certifications, location names or employment dates; review the website's contents with the owner.
+5. Use GitHub Pages Deployment/Actions status and check live pages after merging.
 
-### Option 1: Double-click to Open
-Simply double-click `index.html` to open it in Chrome, Edge, Firefox, or Safari.
-
-### Option 2: Run with Python Local Server
-```bash
-python -m http.server 8000
-```
-Then visit: `http://localhost:8000`
-
-### Option 3: Run with Node.js / npx serve
-```bash
-npx serve .
-```
-
----
-
-## 📁 File Structure
-
-```
-Free Claude/
-├── index.html        # Main semantic HTML5 markup & Tailwind setup
-├── styles.css        # Cinema HUD dark theme, glow effects & print styles
-├── app.js            # DCI calculator, audio visualizer, signal flow & filters
-├── resume.pdf        # Original Resume document
-└── README.md         # Documentation & guide
-```
-
----
-
-## 🌐 Deploying Online (Free)
-
-### GitHub Pages:
-1. Initialize git and commit files:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Mukesh Kumar AV & Cinema Engineer Website"
-   ```
-2. Create a GitHub repository and push your code.
-3. In GitHub repo settings -> **Pages** -> Select **Branch: main** / Root folder -> Save.
-
-### Vercel / Netlify:
-- Drag and drop this folder directly into [Netlify Drop](https://app.netlify.com/drop) or import from GitHub on [Vercel](https://vercel.com) for instant global deployment.
+## Contact
+Email links use: mukesh.projection@gmail.com
