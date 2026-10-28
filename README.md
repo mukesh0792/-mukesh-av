@@ -143,6 +143,20 @@ The independent Canvas2D RGB light field is still fixed to the viewport, moving 
 ### Future content opportunity
 Add **sanitized, verified engineering case studies** only after their actual problem, diagnostic steps, approved evidence and repair/commissioning outcome are corroborated and cleared for public use. In the meantime, the site uses representative technical workflows rather than fabricated achievements. If a direct-downloadable PDF CV becomes available, link to its verified public file instead of falsely advertising the printable HTML as PDF.
 
+## V10 domestic and international resume redesign (29 October 2026)
+The older public `resume.html` summary has become a **resume selector** offering two distinct role-oriented, single-column professional resumes:
+
+- `resume-india.html`: India/domestic managerial, cinema technical operations and service leadership emphasis. Regional projection and sound operations, PPM, OEM/RMA coordination, installation and fault isolation.
+- `resume-international.html`: International digital cinema service engineer, field support and technical operations emphasis. Cross-OEM Barco/Christie/NEC platforms, laser/optics, Dolby/GDC systems, commissioning and fault-isolation terminology. No assumptions about visa, foreign work authorisation or relocation approval.
+- `resume.html`: Responsive, accessible choice page with separate clear calls to action and instructions for using browser **Print / Save as PDF**. Neither resume claims that a PDF is directly hosted; the user generates it locally via the browser print dialog.
+- `resume-v10.css`: Standalone responsive single-column, text-first resume design with restrained navy screen navigation, white printable documents, A4 print margins, legible typography and hidden print controls. No external fonts, logos/photos, complex tables or graphics in the resumes themselves.
+- `resume-actions.js`: Small first-party script for the Print / Save as PDF buttons; no analytics or data submission.
+- Homepage links: hero, desktop/mobile navigation, credentials and contact now point to the same India/International resume chooser.
+
+**Evidence and scope:** The resumes use established public employment history: PVR INOX Manager – Sound & Projection since 26 Dec 2024, Qube Team Coordinator (May 2023–Dec 2024), senior engineer (Jul 2015–Apr 2023), and engineer (Jul 2011–Jun 2015); verified Barco Series 4 Level 2 (2025), Series 2 LLU Level 1 (2023), Series 4 Level 1 (2022); Christie technical training, NEC, Dante Level 1, Q-SYS and Lightware training; the listed technical platforms and ongoing Cinema AI/PPM initiatives. No unverified commercial results, technical performance metrics, salaries, phone numbers, client details or unsupported immigration status are added. Existing website and resume contact addresses and LinkedIn URL are reused unchanged.
+
+**ATS-conscious, not an ATS guarantee:** The downloadable representation is user-generated via browser Print/Save as PDF. Different hiring systems parse documents differently; final applications should be reviewed against the actual job description. Any new work-permit, phone, travel or relocation details should only be added after owner verification.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
