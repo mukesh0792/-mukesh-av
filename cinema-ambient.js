@@ -109,12 +109,15 @@
     const point = lensPoint();
     const spread = shownSpread;
     const contrast = higherContrast.matches ? .57 : 1;
+    // Give RGB light priority over the reduced projector on phone screens.
+    const mobile = width <= 700 || (width <= 900 && width > height);
+    const colourBoost = mobile ? 1.52 : 1;
     const drift = reducedMotion.matches ? 0 : Math.sin(shownScroll * .74) * width * .045;
     const wave = reducedMotion.matches ? 0 : Math.sin(shownScroll * .55) * height * .075;
 
     // Subtle free-space glow even before the training section.
     softHalo(point.x, point.y, width * .48, height * .34,
-      [166, 225, 241], .06 * contrast);
+      [166, 225, 241], (mobile ? .095 : .06) * contrast);
 
     // Projector is aimed upward: RGB light fans out from the actual lens.
     // All sections use the SAME full-width top edge, so reverse scrolling
@@ -132,9 +135,9 @@
       const mid = (left + right) * .5;
       const gradient = ctx.createLinearGradient(point.x, point.y, mid, top);
       gradient.addColorStop(0, rgba(rgb[i], .03 * contrast));
-      gradient.addColorStop(.27, rgba(rgb[i], .14 * boost * contrast));
-      gradient.addColorStop(.69, rgba(rgb[i], .29 * boost * contrast));
-      gradient.addColorStop(1, rgba(rgb[i], .23 * boost * contrast));
+      gradient.addColorStop(.27, rgba(rgb[i], .14 * boost * colourBoost * contrast));
+      gradient.addColorStop(.69, rgba(rgb[i], .29 * boost * colourBoost * contrast));
+      gradient.addColorStop(1, rgba(rgb[i], .23 * boost * colourBoost * contrast));
       ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.moveTo(point.x, point.y);
@@ -164,7 +167,7 @@
           height * .46 + wave * .4,
           width * .43,
           height * .92,
-          rgb[i], (.21 * spread) * contrast
+          rgb[i], (.21 * spread * colourBoost) * contrast
         );
       }
       // RGB-only illumination; no fourth mixed-color light source.
@@ -201,7 +204,8 @@
           break;
         }
       }
-      ambient.style.setProperty('--projector-alpha', blocked ? '.62' : '.91');
+      ambient.style.setProperty('--projector-alpha',
+        mobile ? (blocked ? '.28' : '.48') : (blocked ? '.62' : '.91'));
     }
   }
 
