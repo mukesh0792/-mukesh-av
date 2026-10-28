@@ -79,11 +79,14 @@
     let lastPhase = '';
 
     function updateProjection() {
-      const scrollRange = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      const progress = Math.min(1, Math.max(0, window.scrollY / scrollRange));
-      const phase = window.scrollY < 48 ? 'idle'
-        : progress < 0.30 ? 'rays'
-        : progress < 0.65 ? 'bars'
+      const scrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
+      const viewportHeight = Math.max(1, window.innerHeight);
+      const viewportProgress = scrollY / viewportHeight;
+      // Show each visual within the first two viewport scrolls on phones.
+      // Previous page-length percentages left the effect invisible for too long.
+      const phase = scrollY < 32 ? 'idle'
+        : viewportProgress < 0.85 ? 'rays'
+        : viewportProgress < 2.05 ? 'bars'
         : 'frame';
 
       if (phase !== lastPhase) {
@@ -94,7 +97,7 @@
       // Only a small positional drift; no continuous loop or background work.
       projectionAmbient.style.setProperty(
         '--projection-drift',
-        reducedMotion.matches ? '0px' : '-' + Math.round(progress * 22) + 'px'
+        reducedMotion.matches ? '0px' : '-' + Math.round(Math.min(viewportProgress, 3) * 9) + 'px'
       );
       framePending = false;
     }

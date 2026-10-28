@@ -67,6 +67,11 @@ The public homepage now contains an original **SVG digital-cinema projector silh
 - Print excludes the ambient visual completely; printable `resume.html` remains unchanged.
 - Update the `index.html` stylesheet URL version if modifying ambient CSS to avoid stale mobile browser styles. Do not place foreground copy inside the visual layer.
 
+## Mobile scroll-effect visibility correction (28 Oct 2026)
+A phone-browser report confirmed that the static projector silhouette rendered but scrolling did not reveal noticeable RGB rays, colour bars or framing. Root cause assessment: earlier HTML versioned only the CSS URL, not the JavaScript; mobile cache could retain the pre-effect script. Independently, RGB opacity was too low behind near-opaque content and the SVG's test-pattern groups were partly offscreen on a narrow viewport.
+
+Fix: version **both** CSS and JS URLs, switch scroll-phase thresholds to viewport-based milestones (rays after 32px, bars after 0.85 screen, framing after 2.05 screens), strengthen carefully bounded beam alpha, and move test patterns into the mobile viewport. Mobile uses `mix-blend-mode:screen` to preserve white text brightness, screen-only responsive opacity, and no pointer handling. Respect high-contrast and reduced-motion preferences; print remains effect-free. These adjustments are intended to make the effects noticeable without obscuring links or copy. Visual quality should also be confirmed on a real mobile browser; automated source/static tests cannot prove human-perceived contrast.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.

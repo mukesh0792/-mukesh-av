@@ -336,3 +336,45 @@
 }
 /* Decorative background never appears in the printable profile or printouts. */
 @media print{.projection-ambient{display:none!important}.section-alt{background:#fff}}
+
+
+/* Mobile projection visibility v2:
+   Previous implementation was buried behind nearly opaque content and rendered
+   RGB/framing near the clipped left edge of the mobile SVG viewport.
+   Screen blend keeps white text bright even while gentle colours pass behind it. */
+@media screen and (max-width:700px){
+  .projection-ambient{
+    top:72px; /* never tint the sticky mobile navigation */
+    z-index:2;
+    opacity:.86;
+    mix-blend-mode:screen;
+  }
+  .projection-scene{
+    width:125vw;
+    right:-3vw;
+    bottom:12vh;
+  }
+  .projection-color-bars,
+  .projection-framing{
+    transform:translateX(185px);
+    transform-box:view-box;
+  }
+  .projection-projector{opacity:.53}
+  .projection-ambient[data-phase="rays"] .projection-rays{opacity:.84}
+  .projection-ambient[data-phase="bars"] .projection-rays{opacity:.48}
+  .projection-ambient[data-phase="bars"] .projection-color-bars{opacity:.95}
+  .projection-ambient[data-phase="frame"] .projection-rays{opacity:.28}
+  .projection-ambient[data-phase="frame"] .projection-color-bars{opacity:.23}
+  .projection-ambient[data-phase="frame"] .projection-framing{opacity:.94}
+}
+@media screen and (max-width:400px){
+  .projection-ambient{opacity:.79}
+  .projection-scene{width:130vw;bottom:13vh}
+  .projection-color-bars,
+  .projection-framing{transform:translateX(208px)}
+}
+/* Keep effects legible without adding a foreground readability penalty. */
+@media (prefers-contrast:more) and (max-width:700px){
+  .projection-ambient{opacity:.50}
+}
+@media print{.projection-ambient{display:none!important}}
