@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://mukesh0792.github.io/-mukesh-av/sitemap.xml
+Sitemap: https://mukeshkumar.work.gd/sitemap.xml
