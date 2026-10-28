@@ -70,55 +70,7 @@
     });
   }
 
-  // Ambient decorative projection is scroll-driven, never interactive.
-  // Reduced-motion preference retains the artwork but disables movement.
-  const projectionAmbient = document.querySelector('.projection-ambient');
-  if (projectionAmbient) {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let framePending = false;
-    let lastPhase = '';
-
-    function updateProjection() {
-      const scrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
-      const viewportHeight = Math.max(1, window.innerHeight);
-      const viewportProgress = scrollY / viewportHeight;
-      // Show each visual within the first two viewport scrolls on phones.
-      // Previous page-length percentages left the effect invisible for too long.
-      const phase = scrollY < 32 ? 'idle'
-        : viewportProgress < 0.85 ? 'rays'
-        : viewportProgress < 2.05 ? 'bars'
-        : 'frame';
-
-      if (phase !== lastPhase) {
-        projectionAmbient.setAttribute('data-phase', phase);
-        lastPhase = phase;
-      }
-
-      // Only a small positional drift; no continuous loop or background work.
-      projectionAmbient.style.setProperty(
-        '--projection-drift',
-        reducedMotion.matches ? '0px' : '-' + Math.round(Math.min(viewportProgress, 3) * 9) + 'px'
-      );
-      framePending = false;
-    }
-
-    function scheduleProjectionUpdate() {
-      if (!framePending) {
-        framePending = true;
-        window.requestAnimationFrame(updateProjection);
-      }
-    }
-
-    window.addEventListener('scroll', scheduleProjectionUpdate, { passive: true });
-    window.addEventListener('resize', scheduleProjectionUpdate, { passive: true });
-    document.addEventListener('visibilitychange', function () {
-      if (!document.hidden) scheduleProjectionUpdate();
-    });
-    if (typeof reducedMotion.addEventListener === 'function') {
-      reducedMotion.addEventListener('change', scheduleProjectionUpdate);
-    }
-    scheduleProjectionUpdate();
-  }
+  // Rainbow scroll-light and projector visibility are handled by cinema-ambient.js.
 
   const menu = document.querySelector('.mobile-nav');
   if (menu) {
