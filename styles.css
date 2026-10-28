@@ -592,3 +592,46 @@
   .projection-ambient{opacity:.50}
 }
 @media print{.projection-ambient,.cinema-rainbow-field{display:none!important}}
+
+
+/* V7: the projector is a stationary part of the viewport, NOT scroll content.
+   The Canvas2D RGB rays/wash change on scroll; the housing does not move,
+   slide, fade, or react to overlapping text. */
+.projection-ambient{
+  position:fixed!important;
+  inset:0!important;
+  width:100%;
+  height:100%;
+  transform:none!important;
+  pointer-events:none;
+}
+.projection-scene{
+  position:fixed!important;
+  left:50%!important;
+  right:auto!important;
+  transform:translateX(-50%) rotate(90deg)!important;
+  animation:none!important;
+  transition:none!important;
+  will-change:auto;
+}
+.projection-projector{
+  opacity:.78!important;
+  animation:none!important;
+  transition:none!important;
+}
+@media screen and (max-width:700px) and (orientation:portrait){
+  .projection-scene{
+    width:min(50vw,195px)!important;
+    bottom:clamp(26px,5vh,52px)!important;
+  }
+  .projection-projector{opacity:.48!important}
+}
+@media screen and (max-width:900px) and (orientation:landscape){
+  .projection-projector{opacity:.47!important}
+}
+@media (prefers-contrast:more) and (max-width:900px){
+  .projection-projector{opacity:.38!important}
+}
+@media print{
+  .projection-ambient,.cinema-rainbow-field{display:none!important}
+}
