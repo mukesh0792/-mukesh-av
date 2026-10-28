@@ -59,3 +59,60 @@
 @media(max-width:980px){.ai-project-grid{grid-template-columns:1fr}.ai-details-stack{grid-template-columns:1fr 1fr}.ai-project-top{margin-bottom:24px}}
 @media(max-width:700px){.ai-learning-bar{grid-template-columns:1fr;gap:16px;padding:22px}.ai-learning-tags{justify-content:flex-start}.ai-details,.ai-details-stack{grid-template-columns:1fr;gap:17px}.ai-project h3{font-size:34px}.ai-project-lead{font-size:15px}.ai-project-stage{font-size:10px}.ai-project-top{margin-bottom:21px}.ai-project-bottom{align-items:flex-start}.ai-steps{gap:7px}}
 @media print{.ai-project-grid{display:block}.ai-project{background:#fff;color:#111;border:1px solid #bbb;break-inside:avoid;margin:0 0 14px}.ai-learning-bar{background:#fff;border:1px solid #aaa}.ai-learning-bar p,.ai-project-lead,.ai-project-copy,.ai-details ul,.ai-disclaimer{color:#222}.ai-project-stage,.ai-learning-tags span{color:#111;border-color:#888;background:#fff}.ai-details h4,.ai-project-category{color:#111}}
+
+
+/* Verified employer/OEM brand marks: identification only, not approval seals. */
+.timeline-role-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:12px}
+.timeline-role-heading>div{flex:1;min-width:0}
+.timeline-role-heading .overline{margin:0}
+.timeline-role-heading h3{margin:14px 0 12px}
+.timeline-role-heading .company{margin:0}
+.career-company-logo{display:flex;flex:0 0 140px;align-items:center;justify-content:center;min-height:74px;max-width:140px;padding:13px;background:#172733;border:1px solid rgba(189,214,225,.29);border-radius:3px}
+.career-company-logo img{display:block;width:100%;height:auto;max-height:49px;object-fit:contain}
+.career-company-logo--pvr{background:#101a22;border-color:rgba(210,171,94,.34)}
+.career-company-logo--qube{background:#07131b}
+.credential--branded{grid-template-columns:86px minmax(0,1fr) 133px 83px;gap:16px}
+.credential-description{min-width:0}
+.issuer-stamp{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;min-width:0;padding:7px 9px;background:#fff;border:1px solid #d2d9df;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.issuer-stamp img{display:block;max-width:100%;width:auto;height:auto;max-height:43px;object-fit:contain}
+.issuer-stamp--barco{background:#ed1c24;border-color:#ed1c24}
+.issuer-stamp--barco img{max-height:37px}
+.issuer-stamp-label{color:#63717b;letter-spacing:.08em;font-size:8px;font-weight:800;text-align:center;line-height:1.2}
+.issuer-stamp--barco .issuer-stamp-label{color:#fff}
+.brand-usage-note,.profile-brand-note{color:var(--soft);font-size:11px;line-height:1.65;margin:16px 0 0}
+.profile-section .credential.profile-brand-row{grid-template-columns:100px minmax(0,1fr) 124px;gap:16px}
+.profile-brand-row .career-company-logo{width:124px;max-width:124px;min-height:62px;padding:9px;flex-basis:auto}
+.profile-brand-row .career-company-logo img{max-height:39px}
+.profile-brand-row .issuer-stamp{width:124px}
+.profile-brand-row .issuer-stamp img{max-height:35px}
+.profile-brand-note{margin:10px 0 25px}
+@media(max-width:900px){
+  .career-company-logo{flex-basis:116px;max-width:116px;min-height:64px;padding:10px}
+  .credential--branded{grid-template-columns:64px minmax(0,1fr) 117px 75px;gap:12px}
+}
+@media(max-width:650px){
+  .timeline-role-heading{flex-direction:column;gap:14px}
+  .career-company-logo{flex:0 0 auto;width:126px;max-width:126px;min-height:65px}
+  .credential--branded{grid-template-columns:55px minmax(0,1fr);column-gap:11px;row-gap:10px}
+  .credential--branded .issuer-stamp{grid-column:2;justify-self:start;width:122px}
+  .credential--branded .credential-type{grid-column:2;text-align:left}
+  .profile-section .credential.profile-brand-row{grid-template-columns:1fr;gap:9px}
+  .profile-brand-row .career-company-logo{width:124px}
+  .profile-brand-row .issuer-stamp{width:124px}
+}
+@media print{
+  .career-company-logo{break-inside:avoid;background:#fff!important;border-color:#b7c1c8;width:112px;min-height:50px;max-width:112px;padding:7px}
+  .career-company-logo--qube{background:#111d27!important}
+  .career-company-logo--pvr{background:#141b21!important}
+  .career-company-logo img{max-height:32px}
+  .issuer-stamp{box-shadow:none;max-width:84px;padding:4px}
+  .issuer-stamp--barco{background:#ed1c24!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .issuer-stamp img{max-height:26px}
+  .issuer-stamp-label{font-size:6px}
+  .profile-section .credential.profile-brand-row{grid-template-columns:65px minmax(0,1fr) 84px;gap:8px}
+  .profile-brand-row .career-company-logo{width:84px;min-height:44px}
+  .profile-brand-row .career-company-logo img{max-height:27px}
+  .profile-brand-row .issuer-stamp{width:84px}
+  .profile-brand-row .issuer-stamp img{max-height:24px}
+  .brand-usage-note,.profile-brand-note{color:#555;font-size:8px}
+}
