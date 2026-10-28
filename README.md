@@ -89,5 +89,8 @@ All HTML/CSS/JS code is original, not copied from these references.
 4. Never invent quantitative performance claims, certifications, location names or employment dates; review the website's contents with the owner.
 5. Use GitHub Pages Deployment/Actions status and check live pages after merging.
 
+## Social links
+Public homepage Contact links include LinkedIn, GitHub and the owner-provided Facebook share URL `https://www.facebook.com/share/1Jtk66hXDC/`. Facebook requires authentication to inspect the underlying profile in available anonymous browser tests; the website therefore preserves the exact user-supplied share URL without guessing a username/profile ID. No Facebook SDK, tracking widget or embedded script is installed.
+
 ## Contact
 Email links use: mukesh.projection@gmail.com
