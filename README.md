@@ -83,6 +83,19 @@ Technical safeguards: one passive scroll handler, `requestAnimationFrame` scroll
 
 The old hard-edged SVG RGB bars/framing overlays are hidden and their legacy scroll handler removed. Visual results should be checked on physical Android/Chrome browsers; code checks and browser inspection cannot by themselves guarantee aesthetic appearance on every device.
 
+## RGB projection responsive training-trigger update (28 October 2026)
+Following owner feedback, the cinematic background now uses **only three saturated but soft RGB channels (red, green, blue)** originating from the optical center of the generic digital-cinema projector illustration.
+
+**Portrait phone layout:** The SVG projector is cropped to its hardware region rather than retaining a wide scene canvas and displayed at bottom-centre, using a max-80vw responsive width. Its original lens geometry is translated into viewport coordinates so the beam origin aligns with the on-screen lens.
+
+**Landscape and desktop:** The same bottom-centre projection illustration uses narrower responsive widths and identical RGB rendering. Mobile landscape, laptop, and desktop share the same scroll-driven training trigger, which is based on element geometry instead of whole-document percentage.
+
+**Spread transition:** The previously present `Extended AV Training` block now has `id="extended-av-training"`. As it approaches and enters the viewport, RGB beams expand from three focused paths to a wide fan. Three broad colour-specific radial halos fill the **whole viewport** from that point onward (and reverse smoothly when scrolling upward). Within text and card areas, the established feathered `destination-out` focus mask preserves readability; unused background space receives richer light.
+
+**Performance, accessibility and security:** The Canvas2D draw loop remains tied to passive scrolling and short requestAnimationFrame easing, terminating at rest. Pixel density stays capped at 1.5; no new external assets, model imagery, tracking, network calls, packages or libraries were introduced. Decorative layers retain `aria-hidden`, `pointer-events:none`, reduced motion, increased contrast and print exclusion. The printable `resume.html` does not gain the effect.
+
+**QA:** Static checks and mocked Canvas2D scroll tests cover portrait (390×844), mobile landscape (844×390), and desktop (1440×900), including three RGB channels, full-screen spread and termination at rest. Device-specific visual balance still benefits from real handset review.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.

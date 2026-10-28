@@ -448,3 +448,70 @@
 @media print{
   .projection-ambient,.cinema-rainbow-field{display:none!important}
 }
+
+
+/* V4: projector framing across portrait/landscape/desktop.
+   The SVG viewBox now contains only the hardware: center the actual projector,
+   not the older 1200px scene with empty beam space on the left. */
+.projection-ambient{
+  z-index:4;
+  opacity:.93;
+  pointer-events:none;
+  clip-path:inset(86px 0 0 0);
+}
+.projection-scene{
+  position:absolute;
+  left:50%!important;
+  right:auto!important;
+  bottom:clamp(10px,2.5vh,28px)!important;
+  width:clamp(245px,28vw,365px);
+  height:auto;
+  transform:translateX(-50%)!important;
+  will-change:auto;
+  filter:drop-shadow(0 0 14px rgba(84,158,191,.13));
+}
+.projection-projector{
+  opacity:var(--projector-alpha,.84)!important;
+  transition:opacity .65s ease;
+}
+.cinema-rainbow-field{
+  z-index:3;
+  pointer-events:none;
+  clip-path:inset(86px 0 0 0);
+  opacity:1;
+}
+@media screen and (max-width:700px){
+  .projection-ambient{
+    opacity:.89;
+    clip-path:inset(72px 0 0 0);
+  }
+  .cinema-rainbow-field{clip-path:inset(72px 0 0 0)}
+}
+@media screen and (max-width:700px) and (orientation:portrait){
+  .projection-scene{
+    left:50%!important;
+    right:auto!important;
+    bottom:clamp(8px,2vh,22px)!important;
+    width:min(80vw,340px);
+    transform:translateX(-50%)!important;
+  }
+}
+@media screen and (max-width:900px) and (orientation:landscape){
+  .projection-scene{
+    left:50%!important;
+    right:auto!important;
+    bottom:clamp(6px,2vh,15px)!important;
+    width:clamp(205px,32vw,275px);
+    transform:translateX(-50%)!important;
+  }
+}
+@media (prefers-contrast:more){
+  .projection-ambient{opacity:.78}
+  .cinema-rainbow-field{opacity:.70}
+}
+@media (prefers-reduced-motion:reduce){
+  .projection-projector{transition:none}
+}
+@media print{
+  .projection-ambient,.cinema-rainbow-field{display:none!important}
+}
