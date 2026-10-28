@@ -70,6 +70,53 @@
     });
   }
 
+  // Ambient decorative projection is scroll-driven, never interactive.
+  // Reduced-motion preference retains the artwork but disables movement.
+  const projectionAmbient = document.querySelector('.projection-ambient');
+  if (projectionAmbient) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let framePending = false;
+    let lastPhase = '';
+
+    function updateProjection() {
+      const scrollRange = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / scrollRange));
+      const phase = window.scrollY < 48 ? 'idle'
+        : progress < 0.30 ? 'rays'
+        : progress < 0.65 ? 'bars'
+        : 'frame';
+
+      if (phase !== lastPhase) {
+        projectionAmbient.setAttribute('data-phase', phase);
+        lastPhase = phase;
+      }
+
+      // Only a small positional drift; no continuous loop or background work.
+      projectionAmbient.style.setProperty(
+        '--projection-drift',
+        reducedMotion.matches ? '0px' : '-' + Math.round(progress * 22) + 'px'
+      );
+      framePending = false;
+    }
+
+    function scheduleProjectionUpdate() {
+      if (!framePending) {
+        framePending = true;
+        window.requestAnimationFrame(updateProjection);
+      }
+    }
+
+    window.addEventListener('scroll', scheduleProjectionUpdate, { passive: true });
+    window.addEventListener('resize', scheduleProjectionUpdate, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) scheduleProjectionUpdate();
+    });
+    if (typeof reducedMotion.addEventListener === 'function') {
+      reducedMotion.addEventListener('change', scheduleProjectionUpdate);
+    }
+    scheduleProjectionUpdate();
+  }
+
   const menu = document.querySelector('.mobile-nav');
   if (menu) {
     menu.querySelectorAll('nav a').forEach(function (anchor) {

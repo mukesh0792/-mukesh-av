@@ -58,6 +58,15 @@ Previously the QSC Q-SYS Cinema 101 and Lightware AV-over-IP Basics training ent
 
 These assets are displayed solely to identify the training organizations, not as forged certificate seals. Mobile and print badges remain small and retain visible training details as text. Their HTTPS origins are allowlisted exclusively for image loading in CSP; no third-party scripts, analytics, trackers or styles were added. As externally hosted images, continued availability depends on the supplier and their brand rules; future authorized local assets would improve reliability.
 
+## Scroll-reactive cinematic background (October 2026)
+The public homepage now contains an original **SVG digital-cinema projector silhouette** plus restrained, optically aligned RGB/white beam, RGBW colour-bar test-card and framing-guide motifs.
+
+- A single fixed, decorative `.projection-ambient` layer sits **behind page content**, with `pointer-events:none` and `aria-hidden=true` so it cannot obstruct links, interfere with reading/navigation, or clutter the accessibility tree.
+- A single passive, `requestAnimationFrame`-throttled scroll listener uses document scroll progress: **hero = projector silhouette**, **early scrolling = red/green/white rays**, **mid page = test colour bands**, **later page = subtle framing/focus guide**. No heavy canvas, libraries, animation loops, external image requests or audio.
+- All motifs have deliberately low opacity. Dark reading surfaces remain intact. At mobile breakpoints the projector is smaller, opacity reduces, and slow transitions are controlled by the operating system's `prefers-reduced-motion` setting. Motion preference also disables positional drift and CSS transitions.
+- Print excludes the ambient visual completely; printable `resume.html` remains unchanged.
+- Update the `index.html` stylesheet URL version if modifying ambient CSS to avoid stale mobile browser styles. Do not place foreground copy inside the visual layer.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
