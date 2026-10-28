@@ -10,6 +10,15 @@ To avoid requiring visitors to modify their DNS settings, the main site is hoste
 ## Production site
 https://mukesh0792.github.io/-mukesh-av/
 
+## Public AI Learning & Projects content (October 2026 snapshot)
+The homepage contains a new **AI & Projects** section at \`#ai-lab\`, focused on applied AI engineering rather than general-purpose AI marketing.
+
+**Cinema AI** is an *independent digital cinema diagnostic application in development*. The public description distinguishes an early diagnostic/retrieval foundation from outstanding work: document ingestion and provenance, exact model/firmware matching, trustworthy citation and quote checks, bounded web research, approved engineer-feedback learning, regression/safety controls and end-to-end acceptance. Do not claim proprietary foundational model training, autonomous production learning, validated live web browsing, or completed general deployment without new evidence.
+
+**Rajasthan Regional Projector PPM Bot** is a separate region-focused preventive maintenance automation effort. Site/status/review and verified-data workflow foundations exist, while **enhanced projector PPM report drafts**, comparisons, follow-ups and controlled delivery remain development goals. Do not claim enhanced reporting, automated email sends, unapproved report production or operational performance metrics are complete.
+
+Do not publish internal infrastructure endpoints, tokens, client documentation, identifiable field logs, private incident data, manufacturer manuals or proprietary PPM reports. Public project summaries are separate from employer product or vendor endorsements. Update the status date and check each claim against current owner-approved evidence when milestones close.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, photo, JS. Fonts use operating system fonts.
