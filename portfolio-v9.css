@@ -311,9 +311,9 @@ body{
 .footer-inner{line-height:1.5}
 :focus-visible{outline-color:#c8f7f7;outline-offset:4px}
 @media(max-width:900px){
-  .hero{grid-template-columns:minmax(0,1.12fr) minmax(230px,.88fr);gap:26px;padding-block:62px 55px}
+  .hero{grid-template-columns:1fr;gap:28px;padding-block:62px 55px}
   .hero h1{font-size:clamp(42px,6vw,62px)}
-  .hero-visual{max-width:300px}
+  .hero-visual{max-width:270px;margin:4px auto 0}
   .pathways-section{padding-bottom:72px}
   .pathways-intro{gap:20px}
   .career-grid{grid-template-columns:1fr}
