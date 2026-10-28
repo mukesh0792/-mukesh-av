@@ -154,3 +154,83 @@
 
 /* Keep the star wordmark legible when print background graphics are disabled. */
 @media print{.career-company-logo--pvr{background:#fff!important;border-color:#aab4c0!important}.career-company-logo--pvr .pvr-star-wordmark{color:#161d23!important}.career-company-logo--pvr .pvr-wordmark-star{color:#95700c!important}}
+
+
+/* Mobile: keep employer and certification logos secondary to the career text. 
+   Screen-only so existing A4 print scaling remains unchanged. */
+@media screen and (max-width:650px){
+  .timeline-role-heading{
+    flex-direction:row;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:9px;
+  }
+  .timeline-role-heading>div{flex:1 1 auto;min-width:0}
+  .timeline-role-heading h3{margin:10px 0 7px}
+  .career-company-logo,
+  .profile-brand-row .career-company-logo{
+    flex:0 0 80px;
+    width:80px;
+    max-width:80px;
+    min-height:44px;
+    padding:6px;
+    align-self:flex-start;
+  }
+  .career-company-logo img,
+  .profile-brand-row .career-company-logo img{
+    width:100%;
+    max-height:30px;
+    object-fit:contain;
+  }
+  .career-company-logo--pvr .pvr-star-wordmark{
+    font-size:12px;
+    gap:2px;
+    letter-spacing:-.055em;
+  }
+  .career-company-logo--pvr .pvr-wordmark-star{margin-inline:0}
+  .credential--branded{row-gap:7px}
+  .credential--branded .issuer-stamp,
+  .profile-brand-row .issuer-stamp{
+    width:82px;
+    max-width:82px;
+    min-height:42px;
+    padding:4px;
+    gap:3px;
+    justify-self:start;
+  }
+  .issuer-stamp img,
+  .profile-brand-row .issuer-stamp img{max-height:25px}
+  .issuer-stamp--barco img{max-height:21px}
+  .issuer-stamp-label{font-size:6px;line-height:1.1}
+  .profile-section .credential.profile-brand-row{gap:7px}
+  .training-entry{
+    grid-template-columns:63px minmax(0,1fr);
+    gap:10px;
+    padding:12px;
+  }
+  .training-mark{
+    width:62px;
+    min-height:40px;
+    padding:5px;
+    font-size:12px;
+  }
+  .training-mark img{max-height:27px}
+  .profile-additional-training .training-mark{
+    width:78px;
+    min-height:43px;
+  }
+  .profile-additional-training .training-mark img{max-height:29px}
+}
+@media screen and (max-width:375px){
+  .career-company-logo,
+  .profile-brand-row .career-company-logo{
+    flex-basis:72px;
+    width:72px;
+    max-width:72px;
+    min-height:40px;
+    padding:5px;
+  }
+  .career-company-logo--pvr .pvr-star-wordmark{font-size:11px}
+  .credential--branded .issuer-stamp,
+  .profile-brand-row .issuer-stamp{width:76px;max-width:76px}
+}
