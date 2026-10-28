@@ -3,10 +3,10 @@
 Original, responsive professional portfolio site for Mukesh Kumar. Hosted on GitHub Pages.
 
 ## Domain status
-The earlier attempt to use `mukeshav.work.gd` has been suspended: the signed-in DNSExit dashboard reported the hostname was not in the user's account and public DNS returned NXDOMAIN. Do not configure this hostname again without verifying ownership, public DNS and HTTPS. GitHub Pages remains on the verified project URL.
+The account's **active** free subdomain is `mukeshkumar.work.gd` (confirmed in the owner's DNSExit screenshot on 28 Oct 2026). This name is distinct from the previously mistaken `mukeshav.work.gd`. The site changes in this PR remain staged until DNSExit A records have been saved and independently verified. DNSExit needs four GitHub Pages IPv4 A addresses and may take time to propagate. Validate HTTPS before directing visitors to the custom domain. DNSExit free-service attribution is included in the footer.
 
 ## Production site
-https://mukesh0792.github.io/-mukesh-av/
+https://mukeshkumar.work.gd/
 
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
