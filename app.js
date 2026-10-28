@@ -82,9 +82,6 @@
       const scrollY = Math.max(0, window.scrollY || window.pageYOffset || 0);
       const viewportHeight = Math.max(1, window.innerHeight);
       const viewportProgress = scrollY / viewportHeight;
-      const scrollRange = Math.max(1, document.documentElement.scrollHeight - viewportHeight);
-      const progress = Math.min(1, scrollY / scrollRange);
-
       // Show each visual within the first two viewport scrolls on phones.
       // Previous page-length percentages left the effect invisible for too long.
       const phase = scrollY < 32 ? 'idle'
