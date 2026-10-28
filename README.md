@@ -119,6 +119,13 @@ V7 makes the upward-facing, bottom-centred projector SVG **fixed-positioned insi
 
 Portrait mobile retains the compact 50vw/195px projector, upward-pointing lens, low-key visual weight, and the stronger red/green/blue colour settings from V6; responsive landscape/desktop layouts continue unchanged. Decorative layers remain noninteractive, reduced-motion/contrast preferences stay respected, and print still removes projection artwork. CSS/JS cache versions were updated for mobile browsers. Existing career, training, AI projects and social links were not modified.
 
+## Projector anchored to Contact section only (29 October 2026)
+Owner design change: the small upward-facing projector belongs with **“Let's build what's next.”** It should **not appear while scrolling through the rest of the site**. RGB scroll lighting remains throughout the website.
+
+V8 physically moves the projector SVG from the global fixed decorative layer into the existing `#contact` section, below the social links, within its own small normal-flow decoration. The contact-scoped CSS overrides the legacy fixed-position projector declarations with a `position:relative` container and `position:absolute` centred rotated SVG. The projector therefore enters the viewport only when the reader reaches Contact and naturally leaves when scrolling away. It no longer sticks to the window. The mobile projector is further constrained to 43vw / 152px, with 162px maximum on mobile landscape.
+
+The independent Canvas2D RGB light field is still fixed to the viewport, moving with scrolling and dimming behind content. Before Contact is visible it uses a bottom-centre **virtual light origin**; as the Contact illustration becomes visible, it smoothly blends its RGB light origin to the true upward-facing lens position via SVG screen transformation. Thus the effect is retained without inadvertently displaying the projector on every section. CSS and JS cache versions are bumped. Resume/print, project information, career data, logos and links are not changed.
+
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
 - Locally served stylesheet, favicon, portrait, JavaScript, plus in-repo Barco, Christie, Dante and NEC logo files. A single Qube Cinema employer-logo image is hosted externally; PVR INOX uses text/CSS to show its star-separated wordmark. Fonts use operating system fonts.
