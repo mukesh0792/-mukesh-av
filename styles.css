@@ -515,3 +515,40 @@
 @media print{
   .projection-ambient,.cinema-rainbow-field{display:none!important}
 }
+
+
+/* V5: physically align the projector's left-side optical axis UPWARD.
+   Clockwise rotation maps original (-X) lens direction onto screen (-Y).
+   Because transform rotates around its center, lift the housing enough to
+   keep the rotated footprint within the visible bottom-center viewport. */
+.projection-scene{
+  left:50%!important;
+  right:auto!important;
+  bottom:clamp(54px,7vh,90px)!important;
+  width:clamp(238px,28vw,340px);
+  height:auto;
+  transform-origin:center center!important;
+  transform:translateX(-50%) rotate(90deg)!important;
+  will-change:auto;
+}
+@media screen and (max-width:700px) and (orientation:portrait){
+  .projection-scene{
+    width:min(79vw,320px);
+    bottom:clamp(54px,7vh,81px)!important;
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+}
+@media screen and (max-width:900px) and (orientation:landscape){
+  .projection-scene{
+    width:clamp(195px,28vw,270px);
+    bottom:clamp(42px,10vh,65px)!important;
+    transform:translateX(-50%) rotate(90deg)!important;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  /* Rotation is physical lens orientation, not motion. Keep it enabled. */
+  .projection-scene{transform:translateX(-50%) rotate(90deg)!important}
+}
+@media print{
+  .projection-ambient,.cinema-rainbow-field{display:none!important}
+}
