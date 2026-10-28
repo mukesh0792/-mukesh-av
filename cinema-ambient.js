@@ -11,7 +11,7 @@
   const projector = document.querySelector('.projection-projector');
   const training = document.getElementById('extended-av-training');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const higherContrast = window.matchMedia('(prefers-contrast: more');
+  const higherContrast = window.matchMedia('(prefers-contrast: more)');
 
   // Exactly three saturated RGB channels: no extra orange, yellow or violet.
   const rgb = [[255, 60, 86], [41, 240, 119], [57, 125, 255]];
