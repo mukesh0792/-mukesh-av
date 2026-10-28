@@ -116,3 +116,38 @@
   .profile-brand-row .issuer-stamp img{max-height:24px}
   .brand-usage-note,.profile-brand-note{color:#555;font-size:8px}
 }
+
+
+/* 2026 PVR INOX star wordmark identification; typographic treatment based on the
+   company's investor branding, not extracted official logo artwork. */
+.pvr-star-wordmark{display:inline-flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap;color:#fff;font-size:clamp(16px,1.8vw,22px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:850;line-height:1;letter-spacing:-.065em;text-align:center}
+.pvr-wordmark-star{color:#d4a52f;font-size:.72em;line-height:1;margin-inline:0 2px;letter-spacing:0}
+.career-company-logo--pvr .pvr-star-wordmark{width:100%;height:100%}
+.additional-training{border-top:1px solid var(--line);margin-top:36px;padding-top:34px}
+.training-heading{display:flex;justify-content:space-between;gap:25px;align-items:start;margin-bottom:20px}
+.training-heading h3{font-size:clamp(21px,2.4vw,28px);line-height:1.22;max-width:370px}
+.training-heading p:last-child{max-width:550px;font-size:13px;color:var(--muted);margin:0}
+.training-heading .overline{color:var(--accent);margin:0 0 8px}
+.training-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.training-entry{display:grid;grid-template-columns:90px minmax(0,1fr);gap:17px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:19px;min-width:0}
+.training-entry h4{font-size:16px;line-height:1.34;letter-spacing:-.018em;margin:5px 0 5px}
+.training-entry p{font-size:11px;color:var(--soft);margin:0;line-height:1.6}
+.training-year{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.065em}
+.training-mark{display:flex;justify-content:center;align-items:center;width:84px;max-width:100%;min-height:55px;padding:7px;border:1px solid rgba(189,214,225,.27);border-radius:3px;background:#fff;color:#182b37;font-size:16px;font-weight:900;letter-spacing:-.06em;text-align:center;line-height:1.25}
+.training-mark img{display:block;width:auto;height:auto;max-width:100%;max-height:40px;object-fit:contain}
+.training-mark--qsys{background:#192630;color:#fff;letter-spacing:.005em}
+.training-mark--lightware{background:#1c3040;color:#d2f0fb;letter-spacing:.01em}
+.skills-learning{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:25px}
+.skills-learning>div{border-left:2px solid rgba(212,247,139,.55);padding:0 15px}
+.skills-learning .overline{color:var(--accent);margin-bottom:7px}
+.skills-learning p:last-child{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+.career-education{font-size:12px;color:var(--soft);margin:19px 0 0}
+.contact-email-secondary{font-size:13px;color:var(--soft);margin:-8px 0 15px}
+.contact-email-secondary a{color:var(--accent);text-underline-offset:3px;text-decoration:underline}
+.profile-additional-training{break-inside:avoid}
+.profile-additional-training .training-mark{width:110px;min-height:55px}
+.profile-additional-training .training-mark img{max-height:40px}
+@media(max-width:900px){.training-heading{flex-direction:column;gap:10px}.training-heading p:last-child{max-width:100%}}
+@media(max-width:650px){.training-list,.skills-learning{grid-template-columns:1fr}.training-entry{grid-template-columns:75px minmax(0,1fr);padding:14px;gap:12px}.training-mark{width:70px;min-height:48px}.training-entry h4{font-size:15px}.career-company-logo--pvr .pvr-star-wordmark{font-size:19px}}
+@media print{.career-company-logo--pvr .pvr-star-wordmark{font-size:14px!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.training-list{grid-template-columns:1fr 1fr;gap:5px}.training-entry{background:#fff;border-color:#ddd;padding:6px;grid-template-columns:60px 1fr;break-inside:avoid}.training-entry h4{font-size:10px}.training-entry p{font-size:8px;color:#333}.training-year{font-size:7px;color:#222}.training-mark{width:55px;min-height:35px;padding:3px}.training-mark img{max-height:26px}.training-heading h3{font-size:16px}.training-heading p:last-child,.skills-learning p:last-child,.career-education{font-size:9px;color:#222}.additional-training{padding-top:15px;margin-top:15px}.profile-additional-training .training-mark{width:75px;min-height:38px}.profile-additional-training .training-mark img{max-height:26px}.contact-email-secondary{color:#333}}
