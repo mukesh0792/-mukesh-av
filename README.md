@@ -2,8 +2,11 @@
 
 Original, responsive professional portfolio site for Mukesh Kumar. Hosted on GitHub Pages.
 
+## Custom domain
+The site uses the DNSExit free hostname `mukeshav.work.gd` and the repository root `CNAME` file. DNSExit apex A records point to the four GitHub Pages addresses. Keep this hostname registered and DNS records configured to avoid site outages. HTTPS certificate provisioning and public DNS propagation require independent verification. The homepage includes an attribution link to DNSExit.
+
 ## Production site
-https://mukesh0792.github.io/-mukesh-av/
+https://mukeshav.work.gd/
 
 ## Architecture
 - Plain HTML5, CSS and a small JavaScript enhancement. **No package installation, frameworks, analytics, trackers, cookies, servers or forms.**
