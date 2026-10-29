@@ -1,5 +1,14 @@
 # Mukesh Kumar — Digital Cinema & AV Engineering Portfolio
 
+## V11 — One universal professional resume (29 October 2026)
+
+**Owner decision:** The public portfolio should have one best resume suitable for both Indian and international digital-cinema engineering roles, not two competing versions. `resume.html` is now the canonical, professional, ATS-conscious single-column resume combining international cross-OEM engineering specificity with India-based regional management experience. It includes the current PVR INOX role, Qube progression, Barco service credentials, additional qualified training and accurate in-development AI initiatives.
+
+All homepage resume calls to action now use the singular **View Resume** / **View Professional Resume** language, targeting `./resume.html`. Former `resume-india.html` and `resume-international.html` pages remain only as lightweight redirect compatibility stubs to the same canonical resume, so previously shared URLs continue to work. Do not advertise them as alternative versions.
+
+The resume uses `resume-v10.css` and `resume-actions.js` for a dedicated print / Save as PDF control. As before, no salary, personal identification details, invented metrics, or unsupported work-authorization claims are published. Role-specific adaptation can happen privately when applying to a particular posting, while the website presents just one stable universal version.
+
+
 Original, responsive professional portfolio site for Mukesh Kumar. Hosted on GitHub Pages.
 
 ## Custom-domain reliability hold
