@@ -82,3 +82,40 @@ h2 em{color:var(--accent);font-style:normal}
  .issuer-stamp img{display:block;width:100%;max-width:100%;height:auto;max-height:46px;object-fit:contain}
  .credential-type{display:none}
 }
+
+
+/* Mobile branded certification fix: override the legacy, more-specific issuer placement */
+@media(max-width:600px){
+ .credentials-list .credential--branded{
+  grid-template-columns:44px minmax(0,1fr) 76px;
+  align-items:center;
+ }
+ .credentials-list .credential--branded .credential-year{
+  grid-column:1;
+  grid-row:1;
+ }
+ .credentials-list .credential--branded .credential-description{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+ }
+ .credentials-list .credential--branded .issuer-stamp{
+  grid-column:3;
+  grid-row:1;
+  justify-self:end;
+  align-self:center;
+  width:76px;
+  max-width:76px;
+  min-height:0;
+  padding:4px;
+  margin:0;
+ }
+ .credentials-list .credential--branded .issuer-stamp img{
+  max-width:100%;
+  max-height:40px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+ }
+ .credentials-list .credential--branded .credential-type{display:none}
+}
