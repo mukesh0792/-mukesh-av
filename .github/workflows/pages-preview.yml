@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - main
       - redesign/hallmark-av-portfolio
+      - redesign/fresh-cinema-portfolio
 
 permissions:
   contents: read
