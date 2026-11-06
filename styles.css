@@ -711,3 +711,27 @@
   .contact-section .projection-ambient,
   .cinema-rainbow-field{display:none!important}
 }
+
+
+/* Hallmark-inspired portfolio refresh: editorial contrast, warm metal accent, quieter panels. */
+:root{--bg:#090d12;--alt:#101820;--panel:#141f29;--ink:#f4f1e9;--muted:#b9c1c6;--soft:#8c9ba4;--accent:#d9b879;--blue:#9bb9c9;--line:rgba(205,218,224,.16)}
+body{background:radial-gradient(ellipse at 82% 12%,rgba(58,75,83,.19),transparent 34%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.75}
+.site-header{background:rgba(9,13,18,.94);border-bottom-color:rgba(217,184,121,.22)}
+.brand-mark{border-color:rgba(217,184,121,.65);color:var(--accent);background:linear-gradient(145deg,rgba(217,184,121,.08),transparent)}
+.desktop-nav a{letter-spacing:.035em}.desktop-nav .nav-contact{background:var(--accent);color:#17130c;border-radius:2px}.desktop-nav .nav-contact:hover{background:#f0d29b}
+.hero{padding-block:clamp(58px,8vw,112px);min-height:clamp(590px,78vh,800px)}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.065em;line-height:.98;font-size:clamp(56px,7.4vw,104px)}
+.hero h1 span,.section-heading em,.contact-heading em{color:var(--accent)}
+.eyebrow{letter-spacing:.16em}.signal{background:var(--accent);box-shadow:0 0 0 5px rgba(217,184,121,.11)}
+.button{border-radius:2px;letter-spacing:.025em}.button-primary{background:var(--accent);color:#17130d}.button-primary:hover{background:#f0d29b}.button-outline{border-color:rgba(217,184,121,.36)}.button-outline:hover{border-color:var(--accent);background:rgba(217,184,121,.055)}
+.portrait-panel{border-color:rgba(217,184,121,.24);background:linear-gradient(145deg,#24313a,#0b1117);box-shadow:0 28px 80px rgba(0,0,0,.24)}.portrait-panel img{filter:saturate(.78) contrast(1.04)}.portrait-overlay{background:linear-gradient(0deg,rgba(5,9,13,.78),transparent 52%)}
+.marquee-divider{background:var(--accent);color:#17130d}.marquee-divider span{color:#4c3c20}
+.section-alt{background:linear-gradient(180deg,rgba(16,24,32,.98),rgba(12,18,24,.98))}
+.section{padding-block:clamp(72px,9vw,125px)}.section-heading{margin-bottom:clamp(32px,5vw,58px)}.section-heading h2,.contact-heading h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.055em}
+.expertise-card,.career-aside,.ai-project{background:linear-gradient(145deg,rgba(23,34,43,.96),rgba(15,23,30,.96));border-color:rgba(205,218,224,.14);box-shadow:0 12px 35px rgba(0,0,0,.08)}.expertise-card:hover{border-color:rgba(217,184,121,.5)}
+.work-row{padding-block:clamp(24px,4vw,40px)}.work-main h3,.timeline-item h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.035em}.work-count,.credential-year{color:var(--accent)}
+.credential{padding-block:clamp(18px,2.8vw,28px)}.credential-type{color:var(--accent)}.career-company-logo,.issuer-stamp{box-shadow:none}
+.contact-section{background:radial-gradient(ellipse at 50% 0,rgba(217,184,121,.08),transparent 55%)}.contact-heading h2{font-size:clamp(43px,6vw,76px)}
+:focus-visible{outline-color:var(--accent)}
+@media(max-width:650px){.hero{padding-block:48px 62px}.hero h1{font-size:clamp(49px,13.4vw,70px)}.section-heading h2,.contact-heading h2{font-size:clamp(38px,10vw,54px)}.expertise-card{padding:23px}.contact-section{padding-block:78px 88px}}
+@media(prefers-reduced-motion:reduce){.button:hover,.expertise-card:hover{transform:none}}
