@@ -94,7 +94,9 @@
   .timeline-role-heading{flex-direction:column;gap:14px}
   .career-company-logo{flex:0 0 auto;width:126px;max-width:126px;min-height:65px}
   .credential--branded{grid-template-columns:55px minmax(0,1fr);column-gap:11px;row-gap:10px}
-  .credential--branded .issuer-stamp{grid-column:2;justify-self:start;width:122px}
+  .credential--branded .issuer-stamp{grid-column:2;justify-self:start;width:82px;max-width:82px;min-height:42px;padding:4px;display:flex;visibility:visible;opacity:1;position:static}
+  .credential--branded .issuer-stamp img{display:block;max-width:100%;max-height:25px;width:auto;height:auto;object-fit:contain}
+  .credential--branded .issuer-stamp-label{display:block;font-size:6px;line-height:1.1}
   .credential--branded .credential-type{grid-column:2;text-align:left}
   .profile-section .credential.profile-brand-row{grid-template-columns:1fr;gap:9px}
   .profile-brand-row .career-company-logo{width:124px}
