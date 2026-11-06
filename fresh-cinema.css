@@ -68,16 +68,17 @@ h2 em{color:var(--accent);font-style:normal}
 @media(max-width:600px){.container{width:calc(100% - 32px)}.nav-wrap{min-height:68px}.brand-text small{font-size:8px}.hero{padding-top:45px;padding-bottom:58px}.hero h1{font-size:clamp(43px,13vw,66px);margin:17px 0}.hero-description{font-size:14px}.hero-actions{display:flex;flex-wrap:wrap;gap:9px}.button{padding:12px 15px}.hero-meta{display:grid;grid-template-columns:1fr 1fr}.hero-meta span{font-size:9px}.hero-meta b{font-size:10px}.hero-visual{max-width:100%}.pathways-grid,.expertise-grid,.training-list,.skills-learning{grid-template-columns:1fr}.pathway-card{min-height:240px}.expertise-card:last-child{grid-column:auto}.section,.pathways-section{padding-block:58px}.section-heading h2,.pathways-intro h2{font-size:39px}.marquee-divider .container{justify-content:center;text-align:center}.work-row{grid-template-columns:27px 1fr 18px;gap:10px;padding:23px 0}.work-main h3{font-size:24px}.credential{grid-template-columns:48px minmax(0,1fr) 72px;gap:12px;padding:15px}.credential-year{grid-column:1;grid-row:1/3}.credential-description{min-width:0}.credential-description h3{font-size:13px;line-height:1.45}.credential-description p{font-size:11px;line-height:1.5}.issuer-stamp{grid-column:3;grid-row:1/3;display:flex;flex-direction:column;align-items:center;justify-content:center;width:72px;max-width:72px}.issuer-stamp img{width:100%;max-height:48px;object-fit:contain}.issuer-stamp-label{font-size:6px;letter-spacing:.06em;text-align:center;color:var(--soft);margin-top:4px}.credential-type{display:none}.training-entry{padding:14px}.ai-details{grid-template-columns:1fr;gap:5px}.ai-project h3{font-size:29px}.ai-project{padding:20px}.contact-heading h2{font-size:48px}.contact-actions .button{font-size:11px}.footer-inner{align-items:flex-start;flex-direction:column;gap:7px}.timeline-role-heading{flex-direction:column}.career-company-logo{max-width:95px}.ai-steps{line-height:1.6}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
-/* Mobile overflow and credential-card alignment fix */
+/* Mobile certification layout: compact, readable, and ordered */
 @media(max-width:600px){
  html,body{max-width:100%;overflow-x:clip}
  .site-shell,main,.section,.section-alt,.container{min-width:0;max-width:100%}
- .credentials-list{width:100%;min-width:0}
- .credential{width:100%;min-width:0;box-sizing:border-box;grid-template-columns:44px minmax(0,1fr) 68px;gap:10px;padding:14px 12px;border-radius:16px}
- .credential-year{min-width:0;overflow-wrap:anywhere;font-size:9px;letter-spacing:.08em}
- .credential-description{min-width:0;overflow-wrap:anywhere}
- .credential-description h3{font-size:clamp(11px,3.2vw,13px);overflow-wrap:anywhere}
- .credential-description p{overflow-wrap:anywhere}
- .issuer-stamp{width:68px;max-width:68px;min-width:0}
- .issuer-stamp img{display:block;width:100%;max-width:100%;height:auto;max-height:44px;object-fit:contain}
+ .credentials-list{width:100%;min-width:0;gap:10px}
+ .credential{display:grid;width:100%;min-width:0;box-sizing:border-box;grid-template-columns:42px minmax(0,1fr) 76px;grid-template-areas:"year details logo";align-items:center;gap:10px;padding:15px 12px;border-radius:16px}
+ .credential-year{grid-area:year;min-width:0;font-size:9px;letter-spacing:.06em;overflow-wrap:anywhere}
+ .credential-description{grid-area:details;min-width:0;overflow-wrap:anywhere}
+ .credential-description h3{font-size:clamp(12px,3.4vw,14px);line-height:1.42;margin:0 0 5px;overflow-wrap:anywhere}
+ .credential-description p{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+ .issuer-stamp{grid-area:logo;width:76px;max-width:76px;min-width:0;display:flex;align-items:center;justify-content:center}
+ .issuer-stamp img{display:block;width:100%;max-width:100%;height:auto;max-height:46px;object-fit:contain}
+ .credential-type{display:none}
 }
